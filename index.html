@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Controle Financeiro</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="shortcut icon" href="images/favicon.png">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div id="container1">
+            <br>
+            <h1>Controle Financeiro</h1>
+            <hr>
+            <div id="container2">
+                <div id="containerMaio">
+                    <p class="insira">Insira o saldo inicial: R$ <input type = "number" id="inserirSaldoInicialMaio" placeholder="0,00"> <button id="definirSaldoInicial" onclick="definirSaldoInicial()">✓</button></p>
+                    <p class="saldoInicial"><b>Saldo inicial:</b> R$ <spam id="saldoInicialMaio">0.00</spam></p>
+                    <p>Insira o ganho/gasto: R$ <input type = "number" id="inserirGastoMaio" placeholder="0,00"><br></p>
+                        <div class="observ"><p><input type="text" placeholder="(observação)" id="observacao"></p>
+                        <button id ="maisGanho" onclick="definirGanhos()">+</button> <button id="menosGanho" onclick="definirGastos()">-</button></div>
+                </div>
+            </div>
+            <div class = "quadroGastos">
+                <span id="gastosMaio">&nbsp;</span>
+            </div>
+            <button id="limpar" onclick="limpar()">Limpar</button>
+
+            <div class="resultado2">
+                <p class="pGastoDoMes"><b>Gasto total:</b> - R$ <spam id="gastoDoMes">0.00</spam></p>
+            </div>
+            <div class="resultado3">
+                <p class="pGanhoDoMes"><b>Ganho total:</b> + R$ <spam id="ganhoDoMes">0.00</spam></p>
+            </div>
+            <hr>
+            <div class="resultado">
+                <p class="pSaldoFinal"><b>Saldo final:</b> R$ <spam id="saldoFinalMaio">0.00</spam></p>
+            </div>
+            <hr>
+        </div>
+    </body>
+</html>
