@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +13,6 @@
     <link rel="shortcut icon" href="images/favicon.png">
     <script src="script.js"></script>
 </head>
-
 <body class="bg-info">
     <div class="container bg-light mt-2">
         <br>
@@ -46,14 +44,11 @@
                 <h5 class="mt-4">Insira o ganho/gasto:</h5>
                 <div class="form-row">
                     <div class="col">
-
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">R$</span>
                             </div>
                             <input class="form-control" type="number" id="inserirGastoMaio" placeholder="0.00">
-
-
                             <div class="input-group-append">
                                 <button class="btn btn-success" id="maisGanho" onclick="definirGanhos()"><i class="fas fa-plus"></i></button>
                                 <button class="btn btn-danger" id="menosGanho" onclick="definirGastos()"><i class="fas fa-minus"></i></button>
@@ -66,15 +61,12 @@
 
                     </div>
                 </div>
-
                 <hr>
                 <div class="container mt-4 mb-2">
 
                     <div class="quadroGastos bg-white border pb-4">
                         <span class="lead" id="gastosMaio"></span>
                     </div>
-
-
                 </div>
                 <button class="btn btn-info ml-3 mb-2" id="limpar" onclick="limpar()"><i class="far fa-trash-alt"></i>
                     Limpar</button>
@@ -97,5 +89,4 @@
                 <hr class="mb-2">
             </div>
 </body>
-
 </html>
