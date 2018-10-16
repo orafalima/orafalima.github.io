@@ -1,5 +1,3 @@
-
-
 function definirSaldoInicial() {
     let saldoMaio = Number(document.getElementById("inserirSaldoInicialMaio").value);
     document.getElementById("saldoInicialMaio").innerHTML = saldoMaio.toFixed(2);
@@ -18,24 +16,38 @@ function definirGastos() {
     document.getElementById("gastoDoMes").innerHTML = gastosTotais.toFixed(2);
     let incremento = document.getElementById("gastosMaio").innerHTML;
     incremento += "&nbsp;" + " - R$ " + gastoMaio.toFixed(2);
-    document.getElementById("gastosMaio").innerHTML = incremento + " " + "(" + observ + ")" + "<br>";
-    document.getElementById("inserirGastoMaio").value = "";
-    document.getElementById("observacao").value = "";
+    if (observ == "") {
+        document.getElementById("gastosMaio").innerHTML = incremento + "<br>";
+        document.getElementById("inserirGastoMaio").value = "";
+        document.getElementById("observacao").value = "";
+    }
+    else {
+        document.getElementById("gastosMaio").innerHTML = incremento + " " + "(" + observ + ")" + "<br>";
+        document.getElementById("inserirGastoMaio").value = "";
+        document.getElementById("observacao").value = "";
+    }
 }
 
 function definirGanhos() {
     let ganhoMaio = Number(document.getElementById("inserirGastoMaio").value);
     let incremento = document.getElementById("gastosMaio").innerHTML;
     let observ = document.getElementById("observacao").value;
-    incremento += "&nbsp;" + " + R$ " + ganhoMaio.toFixed(2);
-    document.getElementById("gastosMaio").innerHTML = incremento + " " + "(" + observ + ")" + "<br>";
     let saldoFinalMaio = Number(document.getElementById("saldoFinalMaio").innerHTML);
     document.getElementById("saldoFinalMaio").innerHTML = (saldoFinalMaio + ganhoMaio).toFixed(2);
     let ganhosTotal = Number(document.getElementById("ganhoDoMes").innerHTML);
     let ganhos = ganhosTotal += ganhoMaio;
     document.getElementById("ganhoDoMes").innerHTML = ganhos.toFixed(2);
-    document.getElementById("inserirGastoMaio").value = "";
-    document.getElementById("observacao").value = "";
+    incremento += "&nbsp;" + " + R$ " + ganhoMaio.toFixed(2);
+    if (observ == "") {
+        document.getElementById("gastosMaio").innerHTML = incremento + "<br>";
+        document.getElementById("inserirGastoMaio").value = "";
+        document.getElementById("observacao").value = "";
+    }
+    else {
+        document.getElementById("gastosMaio").innerHTML = incremento + " " + "(" + observ + ")" + "<br>";
+        document.getElementById("inserirGastoMaio").value = "";
+        document.getElementById("observacao").value = "";
+    }
 
 }
 
@@ -45,6 +57,6 @@ function limpar() {
     document.getElementById("inserirGastoMaio").value = "";
     document.getElementById("saldoInicialMaio").innerHTML = "0.00";
     document.getElementById("saldoFinalMaio").innerHTML = "0.00";
-    document.getElementById("gastosMaio").innerHTML = "&nbsp;";
+    document.getElementById("gastosMaio").innerHTML = "";
     document.getElementById("observacao").value = "";
 }

@@ -1,0 +1,41 @@
+/* Large devices (desktops) */
+
+@media (min-width: 992px) {
+  .container.bg-light.mt-2 {
+    width: 600px;
+  }
+
+  h5 {
+    text-align: center;
+  }
+
+  .input-group {
+    width: 350px;
+    margin-left: 115px;
+  }
+
+  .container.mb-4.mt-4 h5 {
+    font-size: 25px;
+  }
+}
+
+/* Extra large devices (large desktops) */
+
+@media (min-width: 1200px) {
+  .container.bg-light.mt-2 {
+    width: 600px;
+  }
+
+  h5 {
+    text-align: center;
+  }
+
+  .input-group {
+    width: 350px;
+    margin-left: 115px;
+  }
+
+  .container.mb-4.mt-4 h5 {
+    font-size: 25px;
+  }
+}
