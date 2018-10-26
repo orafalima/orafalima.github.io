@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+        <link rel="shortcut icon" href="https://imgur.com/dljSXiD.png">
+        <title>Jogo: Pedra, Papel ou Tesoura</title>
+        <script>
+            function jogadaPedra() {
+                esvaziarCampos();
+                document.getElementById("jogadaUsuario").innerHTML = "<i class='far fa-hand-rock'></i> Pedra";
+                let jogadaComputador = calcularJogadaComputador();
+                ganhadorJogadaPedra(jogadaComputador);
+            }
+            function ganhadorJogadaPedra(jogadaComputador) {
+                if (jogadaComputador == 1) {
+                    jogadaComputadorPapel();
+                    ganhadorComputador();
+                }
+                else if (jogadaComputador == 2) {
+                    jogadaComputadorTesoura();
+                    ganhadorUsuario();
+                }
+                else {
+                    jogadaComputadorPedra();
+                    ganhadorEmpate();
+                }
+            }
+            function jogadaPapel() {
+                esvaziarCampos();
+                document.getElementById("jogadaUsuario").innerHTML = "<i class='far fa-hand-paper'></i> Papel";
+                let jogadaComputador = calcularJogadaComputador();
+                ganhadorJogadaPapel(jogadaComputador);
+            }
+            function ganhadorJogadaPapel(jogadaComputador) {
+                if (jogadaComputador == 1) {
+                    jogadaComputadorPapel();
+                    ganhadorEmpate();
+                }
+                else if (jogadaComputador == 2) {
+                    jogadaComputadorTesoura();
+                    ganhadorComputador();
+                }
+                else {
+                    jogadaComputadorPedra();
+                    ganhadorUsuario();
+                }
+            }
+            function jogadaTesoura() {
+                esvaziarCampos();
+                document.getElementById("jogadaUsuario").innerHTML = "<i class='far fa-hand-scissors'></i> Tesoura";
+                let jogadaComputador = calcularJogadaComputador();
+                ganhadorJogadaTesoura(jogadaComputador);
+            }
+            function ganhadorJogadaTesoura(jogadaComputador) { 
+                if (jogadaComputador == 1) {
+                    jogadaComputadorPapel();
+                    ganhadorUsuario();
+                }
+                else if (jogadaComputador == 2) {
+                    jogadaComputadorTesoura();
+                    ganhadorEmpate();
+                }
+                else {
+                    jogadaComputadorPedra();
+                    ganhadorComputador();
+                }
+            }
+            function esvaziarCampos() {
+                document.getElementById("jogadaUsuario").innerHTML = "";
+                document.getElementById("jogadaComputador").innerHTML = "";
+                document.getElementById("resultado").innerHTML = "";
+            }
+            function calcularJogadaComputador() {
+                return Math.floor(3*Math.random());
+            }
+            function jogadaComputadorPedra() {
+                document.getElementById("jogadaComputador").innerHTML = "<i class='far fa-hand-rock'></i> Pedra";
+            }
+            function jogadaComputadorPapel() {
+                document.getElementById("jogadaComputador").innerHTML = "<i class='far fa-hand-paper'></i> Papel";
+            }
+            function jogadaComputadorTesoura() {
+                document.getElementById("jogadaComputador").innerHTML = "<i class='far fa-hand-scissors'></i> Tesoura";
+            }
+            function ganhadorEmpate() {
+                document.getElementById("resultado").innerHTML = "<span class='text-info'>Empate.</span>";
+            }
+            function ganhadorUsuario() {
+                document.getElementById("resultado").innerHTML = "<span class='text-success'>Você ganhou!</span>";
+                let pontuacaoUsuario = Number(document.getElementById("pontuacaoUsuario").innerHTML);
+                let incremento = pontuacaoUsuario += 1;
+                document.getElementById("pontuacaoUsuario").innerHTML = incremento.toString();
+            }
+            function ganhadorComputador() {
+                document.getElementById("resultado").innerHTML = "<span class='text-danger'>O computador ganhou...<span>";
+                let pontuacaoComputador = Number(document.getElementById("pontuacaoComputador").innerHTML);
+                let incremento = pontuacaoComputador += 1;
+                document.getElementById("pontuacaoComputador").innerHTML = incremento.toString();
+            }
+        </script>
+        <style>
+            .containerGeral {
+                width: 100%;
+                height: 500px;
+            }
+            .containerBotoes {
+                text-align: center;
+            }
+            .containerSecundario {
+                width: 500px;
+                margin: auto;
+            }
+            #resultado {
+                font: 25px 'Open Sans', sans-serif;
+                font-weight: 600;
+            }
+        </style>
+    </head>
+    <body class="bg-info">
+        <h1 class="text-dark text-center mt-4 mb-4 pt-2 pb-3 bg-light">Jogo: Pedra, Papel ou Tesoura</h1>
+        <div class="containerGeral bg-light pt-2">
+            <div class="containerSecundario">
+                <h3 class="text-dark mb-4 pt-3 text-center">Escolha uma jogada:</h3>
+            </div>
+            <div class="containerBotoes mb-4">
+                <button class="btn btn-success mr-2 ml-2 btn-lg" onclick="jogadaPedra()"><i class="far fa-hand-rock"></i> Pedra</button>
+                <button class="btn btn-warning text-white mr-2 ml-2 btn-lg" onclick="jogadaPapel()"><i class="far fa-hand-paper"></i> Papel</button>
+                <button class="btn btn-danger mr-2 ml-2 btn-lg" onclick="jogadaTesoura()"><i class="far fa-hand-scissors"></i> Tesoura</button>
+            </div><hr>
+            <h4 class="text-center">Pontuação: <span id="pontuacaoUsuario" class="text-success">0</span> vs <span id="pontuacaoComputador" class="text-danger">0</span></h4><hr>
+            <div class="containerSecundario">
+                <h4 class="mt-4">Sua jogada: <span id="jogadaUsuario" class="text-info"></span></h4>
+                <h4 class="mt-3 mb-4">Computador: <span id="jogadaComputador" class="text-info"></span></h4>
+            </div><hr>
+            <div class="containerSecundario text-center">
+                <h3 class="mt-3 mb-3 text-center">Resultado:</h3>
+                <span id="resultado"></span>
+            </div>
+        </div>
+    </body>
+</html>
