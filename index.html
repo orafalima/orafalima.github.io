@@ -1,35 +1,227 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
     <head>
-        <meta charset="UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-        <link rel="shortcut icon" href="https://imgur.com/dljSXiD.png">
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <script src="script.js"></script>
-        <title>Jogo: Pedra, Papel ou Tesoura</title>
+        <link rel="icon" href="images/favicon.png" sizes="16x16">
+        <title>Facebook</title>
+        <style>
+            nav {
+                width: 100%;
+                height: 65px;
+                border-bottom: 1px solid #29487d;
+                background-color: #4867aa;
+            }
+            body {
+                background-color: #e9ebee;
+                margin: 0;
+                padding: 0;
+            }
+            h3 {
+                color: #000;
+                font: 20px 'Open Sans', sans-serif;
+                text-indent: 20px;
+            }
+            p {
+                margin: 0;
+                padding: 0;
+                font: 15px 'Open Sans', sans-serif;
+            }
+            #amigo1 img:hover, #amigo2 img:hover, #amigo3 img:hover, #amigo4 img:hover, #amigo5 img:hover, #amigo6 img:hover {
+                border-color: #4867aa;
+            }
+            #amigo1, #amigo2, #amigo3, #amigo4, #amigo5, #amigo6 {
+                display: inline-block;
+                margin-right: 20px;
+            }
+            #meusAmigos img {
+                border: 3px solid #fff;
+                box-shadow: 3px 3px 10px #888888;
+                margin-bottom: 20px;
+            }
+            #meusAmigos {
+                margin: 20px;
+            }
+            #infoAmigo1, #infoAmigo2, #infoAmigo3, #infoAmigo4, #infoAmigo5, #infoAmigo6 {
+                margin-top: -23px;
+                position: absolute;
+                display: none;
+                width: 280px;
+                background-color: #fff;
+                box-shadow: 3px 3px 10px #333;
+                height: 70px;
+                padding: 20px;
+            }
+            .online {
+                color: #13d616;
+            }
+            .offline {
+                color: red;
+            }
+            #imagemAmigo1, #imagemAmigo2, #imagemAmigo3, #imagemAmigo4, #imagemAmigo5, #imagemAmigo6 {
+                width: 160px;
+                height: 160px;
+            }
+        </style>
+        <script>
+            function exibirAmigo(amigo) {
+                switch(amigo) {
+                    case 1: document.getElementById("infoAmigo1").style.display = "block";
+                        break;
+                    case 2: document.getElementById("infoAmigo2").style.display = "block";
+                        break;
+                    case 3: document.getElementById("infoAmigo3").style.display = "block";
+                        break;
+                    case 4: document.getElementById("infoAmigo4").style.display = "block";
+                        break;
+                    case 5: document.getElementById("infoAmigo5").style.display = "block";
+                        break;
+                    case 6: document.getElementById("infoAmigo6").style.display = "block";
+                        break;
+                }
+            }
+            function recolherAmigo(amigo) {
+                switch(amigo) {
+                    case 1: document.getElementById("infoAmigo1").style.display = "none";
+                        break;
+                    case 2: document.getElementById("infoAmigo2").style.display = "none";
+                        break;
+                    case 3: document.getElementById("infoAmigo3").style.display = "none";
+                        break;
+                    case 4: document.getElementById("infoAmigo4").style.display = "none";
+                        break;
+                    case 5: document.getElementById("infoAmigo5").style.display = "none";
+                        break;
+                    case 6: document.getElementById("infoAmigo6").style.display = "none";
+                        break;
+                }
+            }
+            function montarPerfisAmigos() {
+                let listaAmigos = [
+                    ["Rachel Green","images/RachelGreen.png","facebook.com/rachelgreen",true,true],
+                    ["Chandler Bing","images/ChandlerBing.jpg","facebook.com/chandlerbing",true,false],
+                    ["Monica Geller","images/MonicaGeller.jpg","facebook.com/monicageller",true,true],
+                    ["Ross Geller","images/RossGeller.jpg","facebook.com/rossgeller",false,true],                    
+                    ["Joey Tribbiani","images/JoeyTribbiani.jpg","facebook.com/joeytribbiani",false,true],                    
+                    ["Phoebe Buffay","images/PhoebeBuffay.jpg","facebook.com/phoebebuffay",false,false]
+                ];
+                //AMIGO 1
+                document.getElementById("nomeAmigo1").innerHTML = listaAmigos[0][0];
+                document.getElementById("imagemAmigo1").src = listaAmigos[0][1];
+                document.getElementById("perfilAmigo1").innerHTML = listaAmigos[0][2];
+                if(listaAmigos[0][3] == true) document.getElementById("relacaoAmigo1").innerHTML = "Melhor Amigo";
+                else document.getElementById("relacaoAmigo1").innerHTML = "Amigo";
+                if(listaAmigos[0][4] == true) document.getElementById("statusAmigo1").innerHTML = "<span class='online'>Online</span>";
+                else document.getElementById("statusAmigo1").innerHTML = "<span class='offline'>Offline</span>";
+
+                //AMIGO 2
+                document.getElementById("nomeAmigo2").innerHTML = listaAmigos[1][0];
+                document.getElementById("imagemAmigo2").src = listaAmigos[1][1];
+                document.getElementById("perfilAmigo2").innerHTML = listaAmigos[1][2];
+                if(listaAmigos[1][3] == true) document.getElementById("relacaoAmigo2").innerHTML = "Melhor Amigo";                
+                else document.getElementById("relacaoAmigo2").innerHTML = "Amigo";                
+                if(listaAmigos[1][4] == true) document.getElementById("statusAmigo2").innerHTML = "<span class='online'>Online</span>";                
+                else document.getElementById("statusAmigo2").innerHTML = "<span class='offline'>Offline</span>";
+
+                //AMIGO 3
+                document.getElementById("nomeAmigo3").innerHTML = listaAmigos[2][0];
+                document.getElementById("imagemAmigo3").src = listaAmigos[2][1];
+                document.getElementById("perfilAmigo3").innerHTML = listaAmigos[2][2];
+                if(listaAmigos[2][3] == true) document.getElementById("relacaoAmigo3").innerHTML = "Melhor Amigo";                
+                else document.getElementById("relacaoAmigo3").innerHTML = "Amigo";                
+                if(listaAmigos[2][4] == true) document.getElementById("statusAmigo3").innerHTML = "<span class='online'>Online</span>";                
+                else document.getElementById("statusAmigo3").innerHTML = "<span class='offline'>Offline</span>";
+
+                //AMIGO 4
+                document.getElementById("nomeAmigo4").innerHTML = listaAmigos[3][0];
+                document.getElementById("imagemAmigo4").src = listaAmigos[3][1];
+                document.getElementById("perfilAmigo4").innerHTML = listaAmigos[3][2];
+                if(listaAmigos[3][3] == true) document.getElementById("relacaoAmigo4").innerHTML = "Melhor Amigo";                
+                else document.getElementById("relacaoAmigo4").innerHTML = "Amigo";                
+                if(listaAmigos[3][4] == true) document.getElementById("statusAmigo4").innerHTML = "<span class='online'>Online</span>";                
+                else document.getElementById("statusAmigo4").innerHTML = "<span class='offline'>Offline</span>";
+
+                //AMIGO 5
+                document.getElementById("nomeAmigo5").innerHTML = listaAmigos[4][0];
+                document.getElementById("imagemAmigo5").src = listaAmigos[4][1];
+                document.getElementById("perfilAmigo5").innerHTML = listaAmigos[4][2];
+                if(listaAmigos[4][3] == true) document.getElementById("relacaoAmigo5").innerHTML = "Melhor Amigo";                
+                else document.getElementById("relacaoAmigo5").innerHTML = "Amigo";                
+                if(listaAmigos[4][4] == true) document.getElementById("statusAmigo5").innerHTML = "<span class='online'>Online</span>";                
+                else document.getElementById("statusAmigo5").innerHTML = "<span class='offline'>Offline</span>";
+
+                //AMIGO 6
+                document.getElementById("nomeAmigo6").innerHTML = listaAmigos[5][0];
+                document.getElementById("imagemAmigo6").src = listaAmigos[5][1];
+                document.getElementById("perfilAmigo6").innerHTML = listaAmigos[5][2];
+                if(listaAmigos[5][3] == true) document.getElementById("relacaoAmigo6").innerHTML = "Melhor Amigo";                
+                else document.getElementById("relacaoAmigo6").innerHTML = "Amigo";                
+                if(listaAmigos[5][4] == true) document.getElementById("statusAmigo6").innerHTML = "<span class='online'>Online</span>";                
+                else document.getElementById("statusAmigo6").innerHTML = "<span class='offline'>Offline</span>";
+            }
+        </script>
     </head>
-    <body class="bg-info">
-        <h1 class="text-dark text-center mt-4 mb-4 pt-2 pb-3 bg-light">Jogo: Pedra, Papel ou Tesoura</h1>
-        <div class="containerGeral bg-light pt-2">
-            <div class="containerSecundario">
-                <h3 class="text-dark mb-4 pt-3 text-center">Escolha uma jogada:</h3>
+    <body onload="montarPerfisAmigos()">
+        <nav>
+            <img src="images/logo.jpg" style="width: 150px">
+        </nav>
+        <div id="meusAmigos">
+            <h3>• Meus amigos</h3>
+            <div id="amigo1">
+                <a href="#"><img id="imagemAmigo1" onmouseover="exibirAmigo(1)" onmouseout="recolherAmigo(1)"></a>
+                <div id="infoAmigo1">
+                    <p><b>Nome: </b><span id="nomeAmigo1"></span></p>
+                    <p><b>Perfil: </b><span id="perfilAmigo1"></span></p>
+                    <p><b>Relação: </b><span id="relacaoAmigo1"></span></p>
+                    <p><b>Status: </b><span id="statusAmigo1"></span></p>
+                </div>
             </div>
-            <div class="containerBotoes mb-4">
-                <button class="btn btn-success mr-2 ml-2 btn-lg" onclick="jogadaPedra()"><i class="far fa-hand-rock"></i> Pedra</button>
-                <button class="btn btn-warning text-white mr-2 ml-2 btn-lg" onclick="jogadaPapel()"><i class="far fa-hand-paper"></i> Papel</button>
-                <button class="btn btn-danger mr-2 ml-2 btn-lg" onclick="jogadaTesoura()"><i class="far fa-hand-scissors"></i> Tesoura</button>
-            </div><hr>
-            <h4 class="text-center">Pontuação: <span id="pontuacaoUsuario" class="text-success">0</span> vs <span id="pontuacaoComputador" class="text-danger">0</span></h4><hr>
-            <div class="containerSecundario">
-                <h4 class="mt-4">Sua jogada: <span id="jogadaUsuario" class="text-info"></span></h4>
-                <h4 class="mt-3 mb-4">Computador: <span id="jogadaComputador" class="text-info"></span></h4>
-            </div><hr>
-            <div class="containerSecundario text-center">
-                <h3 class="mt-3 mb-3 text-center">Resultado:</h3>
-                <span id="resultado"></span>
+            <div id="amigo2">
+                <a href="#"><img id="imagemAmigo2" onmouseover="exibirAmigo(2)" onmouseout="recolherAmigo(2)"></a>
+                <div id="infoAmigo2">
+                    <p><b>Nome: </b><span id="nomeAmigo2"></span></p>
+                    <p><b>Perfil: </b><span id="perfilAmigo2"></span></p>
+                    <p><b>Relação: </b><span id="relacaoAmigo2"></span></p>
+                    <p><b>Status: </b><span id="statusAmigo2"></span></p>
+                </div>
+            </div>
+            <div id="amigo3">
+                <a href="#"><img id="imagemAmigo3" onmouseover="exibirAmigo(3)" onmouseout="recolherAmigo(3)"></a>
+                <div id="infoAmigo3">
+                    <p><b>Nome: </b><span id="nomeAmigo3"></span></p>
+                    <p><b>Perfil: </b><span id="perfilAmigo3"></span></p>
+                    <p><b>Relação: </b><span id="relacaoAmigo3"></span></p>
+                    <p><b>Status: </b><span id="statusAmigo3"></span></p>
+                </div>
+            </div>
+            <br>
+            <div id="amigo4">
+                <a href="#"><img id="imagemAmigo4" onmouseover="exibirAmigo(4)" onmouseout="recolherAmigo(4)"></a>
+                <div id="infoAmigo4">
+                    <p><b>Nome: </b><span id="nomeAmigo4"></span></p>
+                    <p><b>Perfil: </b><span id="perfilAmigo4"></span></p>
+                    <p><b>Relação: </b><span id="relacaoAmigo4"></span></p>
+                    <p><b>Status: </b><span id="statusAmigo4"></span></p>
+                </div>
+            </div>
+            <div id="amigo5">
+                <a href="#"><img id="imagemAmigo5" onmouseover="exibirAmigo(5)" onmouseout="recolherAmigo(5)"></a>
+                <div id="infoAmigo5">
+                    <p><b>Nome: </b><span id="nomeAmigo5"></span></p>
+                    <p><b>Perfil: </b><span id="perfilAmigo5"></span></p>
+                    <p><b>Relação: </b><span id="relacaoAmigo5"></span></p>
+                    <p><b>Status: </b><span id="statusAmigo5"></span></p>
+                </div>
+            </div>
+            <div id="amigo6">
+                <a href="#"><img id="imagemAmigo6" onmouseover="exibirAmigo(6)" onmouseout="recolherAmigo(6)"></a>
+                <div id="infoAmigo6">
+                    <p><b>Nome: </b><span id="nomeAmigo6"></span></p>
+                    <p><b>Perfil: </b><span id="perfilAmigo6"></span></p>
+                    <p><b>Relação: </b><span id="relacaoAmigo6"></span></p>
+                    <p><b>Status: </b><span id="statusAmigo6"></span></p>
+                </div>
             </div>
         </div>
     </body>
