@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="favicon.png" sizes="16x16">
+        <title>Jogo da Velha</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                border-spacing: 0;
+            }
+            #container {
+                width: 300px;
+                margin: auto;
+                margin-top: 100px;
+            }
+            #compVenc {
+                display: none;
+                text-align: center;
+                margin-top: 50px;
+                font-family: 'Open Sans', sans-serif;
+                color: red;
+            }
+            #userVenc {
+                display: none;
+                text-align: center;
+                margin-top: 50px;
+                font-family: 'Open Sans', sans-serif;
+                color: green;
+            }
+            td {
+                height: 93px;
+                width: 93px;
+            }
+            #linha1 td {
+                border-bottom: 3px solid #000;
+            }
+            #linha2 td {
+                border-bottom: 3px solid #000;
+            }
+            #a00,#a01,#a10,#a11,#a20,#a21 {
+                border-right: 3px solid #000;
+            }
+            img {
+                text-align: center;
+                vertical-align: middle;
+                display: none;
+                width: 90px;
+                height: 90px;
+            }
+        </style>
+        <script>
+            let tabela = [];
+            function jogada(posicao) {
+                if(posicao=='a00') {
+                    if(tabela[0] != 1) {
+                        tabela[0] = 0;
+                        document.getElementById("xa00").style.display = "inline";
+                        verificacaoUser();
+                    }
+                    if(verificacaoUser() == false) {
+                        jogadaComputador();
+                    }
+                }
+                if(posicao=='a01') {
+                    if(tabela[1] != 1) {
+                        tabela[1] = 0;
+                        document.getElementById("xa01").style.display = "inline";
+                        verificacaoUser();
+                    }
+                    if(verificacaoUser() == false) {
+                        jogadaComputador();
+                    }
+                }
+                if(posicao=='a02') {
+                    if(tabela[2] != 1) {
+                        tabela[2] = 0;
+                        document.getElementById("xa02").style.display = "inline";
+                        verificacaoUser();
+                    }
+                    if(verificacaoUser() == false) {
+                        jogadaComputador();
+                    }
+                }
+                if(posicao=='a10') {
+                    if(tabela[3] != 1) {
+                        tabela[3] = 0;
+                        document.getElementById("xa10").style.display = "inline";
+                        verificacaoUser();
+                    }
+                    if(verificacaoUser() == false) {
+                        jogadaComputador();
+                    }
+                }
+                if(posicao=='a11') {
+                    if(tabela[4] != 1) {
+                        tabela[4] = 0;
+                        document.getElementById("xa11").style.display = "inline";
+                        verificacaoUser();
+                    }
+                    if(verificacaoUser() == false) {
+                        jogadaComputador();
+                    }
+                }
+                if(posicao=='a12') {
+                    if(tabela[5] != 1) {
+                        tabela[5] = 0;
+                        document.getElementById("xa12").style.display = "inline";
+                        verificacaoUser();
+                    }
+                    if(verificacaoUser() == false) {
+                        jogadaComputador();
+                    }
+                }
+                if(posicao=='a20') {
+                    if(tabela[6] != 1) {
+                        tabela[6] = 0;
+                        document.getElementById("xa20").style.display = "inline";
+                        verificacaoUser();
+                    }
+                    if(verificacaoUser() == false) {
+                        jogadaComputador();
+                    }
+                }
+                if(posicao=='a21') {
+                    if(tabela[7] != 1) {
+                        tabela[7] = 0;
+                        document.getElementById("xa21").style.display = "inline";
+                        verificacaoUser();
+                    }
+                    if(verificacaoUser() == false) {
+                        jogadaComputador();
+                    }
+                }
+                if(posicao=='a22') {
+                    if(tabela[8] != 1) {
+                        tabela[8] = 0;
+                        document.getElementById("xa22").style.display = "inline";
+                        verificacaoUser();
+                    }
+                    if(verificacaoUser() == false) {
+                        jogadaComputador();
+                    }
+                }
+            }
+            function verificacaoUser() {
+                if(tabela[0] == 0 && tabela[1] == 0 && tabela[2] == 0) {
+                    document.getElementById("a00").style.backgroundColor = "green";
+                    document.getElementById("a01").style.backgroundColor = "green";
+                    document.getElementById("a02").style.backgroundColor = "green";
+                    exibirUserVenc();
+                    return true;
+                }
+                if(tabela[3] == 0 && tabela[4] == 0 && tabela[5] == 0) {
+                    document.getElementById("a10").style.backgroundColor = "green";
+                    document.getElementById("a11").style.backgroundColor = "green";
+                    document.getElementById("a12").style.backgroundColor = "green";
+                    exibirUserVenc();
+                    return true;
+                }
+                if(tabela[6] == 0 && tabela[7] == 0 && tabela[8] == 0) {
+                    document.getElementById("a20").style.backgroundColor = "green";
+                    document.getElementById("a21").style.backgroundColor = "green";
+                    document.getElementById("a22").style.backgroundColor = "green";
+                    exibirUserVenc();
+                    return true;
+                }
+                if(tabela[0] == 0 && tabela[4] == 0 && tabela[8] == 0) {
+                    document.getElementById("a00").style.backgroundColor = "green";
+                    document.getElementById("a11").style.backgroundColor = "green";
+                    document.getElementById("a22").style.backgroundColor = "green";
+                    exibirUserVenc();
+                    return true;
+                }
+                if(tabela[2] == 0 && tabela[4] == 0 && tabela[6] == 0) {
+                    document.getElementById("a02").style.backgroundColor = "green";
+                    document.getElementById("a11").style.backgroundColor = "green";
+                    document.getElementById("a20").style.backgroundColor = "green";
+                    exibirUserVenc();
+                    return true;
+                }
+                if(tabela[0] == 0 && tabela[3] == 0 && tabela[6] == 0) {
+                    document.getElementById("a00").style.backgroundColor = "green";
+                    document.getElementById("a10").style.backgroundColor = "green";
+                    document.getElementById("a20").style.backgroundColor = "green";
+                    exibirUserVenc();
+                    return true;
+                }
+                if(tabela[1] == 0 && tabela[4] == 0 && tabela[7] == 0) {
+                    document.getElementById("a01").style.backgroundColor = "green";
+                    document.getElementById("a11").style.backgroundColor = "green";
+                    document.getElementById("a21").style.backgroundColor = "green";
+                    exibirUserVenc();
+                    return true;
+                }
+                if(tabela[2] == 0 && tabela[5] == 0 && tabela[8] == 0) {
+                    document.getElementById("a02").style.backgroundColor = "green";
+                    document.getElementById("a12").style.backgroundColor = "green";
+                    document.getElementById("a22").style.backgroundColor = "green";
+                    exibirUserVenc();
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+            function jogadaComputador() {
+                let jogadaComp = Math.floor(Math.random() * 3).toString() + Math.floor(Math.random() * 3).toString();
+                if(jogadaComp == '00') {
+                    if(tabela[0] != 0 && tabela[0] != 1) {
+                        tabela[0] = 1;
+                        document.getElementById("oa00").style.display = "inline";
+                        verificacao();
+                    }
+                    else {
+                        jogadaComputador();
+                    }
+                }
+                if(jogadaComp == '01') {
+                    if(tabela[1] != 0 && tabela[1] != 1) {
+                        tabela[1] = 1;
+                        document.getElementById("oa01").style.display = "inline";
+                        verificacao();
+                    }
+                    else {
+                        jogadaComputador();
+                    }
+                }
+                if(jogadaComp == '02') {
+                    if(tabela[2] != 0 && tabela[2] != 1) {
+                        tabela[2] = 1;
+                        document.getElementById("oa02").style.display = "inline";
+                        verificacao();
+                    }
+                    else {
+                        jogadaComputador();
+                    }
+                }
+                if(jogadaComp == '10') {
+                    if(tabela[3] != 0 && tabela[3] != 1) {
+                        tabela[3] = 1;
+                        document.getElementById("oa10").style.display = "inline";
+                        verificacao();
+                    }
+                    else {
+                        jogadaComputador();
+                    }
+                }
+                if(jogadaComp == '11') {
+                    if(tabela[4] != 0 && tabela[4] != 1) {
+                        tabela[4] = 1;
+                        document.getElementById("oa11").style.display = "inline";
+                        verificacao();
+                    }
+                    else {
+                        jogadaComputador();
+                    }
+                }
+                if(jogadaComp == '12') {
+                    if(tabela[5] != 0 && tabela[5] != 1) {
+                        tabela[5] = 1;
+                        document.getElementById("oa12").style.display = "inline";
+                        verificacao();
+                    }
+                    else {
+                        jogadaComputador();
+                    }
+                }
+                if(jogadaComp == '20') {
+                    if(tabela[6] != 0 && tabela[6] != 1) {
+                        tabela[6] = 1;
+                        document.getElementById("oa20").style.display = "inline";
+                        verificacao();
+                    }
+                    else {
+                        jogadaComputador();
+                    }
+                }
+                if(jogadaComp == '21') {
+                    if(tabela[7] != 0 && tabela[7] != 1) {
+                        tabela[7] = 1;
+                        document.getElementById("oa21").style.display = "inline";
+                        verificacao();
+                    }
+                    else {
+                        jogadaComputador();
+                    }
+                }
+                if(jogadaComp == '22') {
+                    if(tabela[8] != 0 && tabela[8] != 1) {
+                        tabela[8] = 1;
+                        document.getElementById("oa22").style.display = "inline";
+                        verificacao();
+                    }
+                    else {
+                        jogadaComputador();
+                    }
+                }
+            }
+            function verificacao() {
+                if(tabela[0] == 1 && tabela[1] == 1 && tabela[2] == 1) {
+                    document.getElementById("a00").style.backgroundColor = "red";
+                    document.getElementById("a01").style.backgroundColor = "red";
+                    document.getElementById("a02").style.backgroundColor = "red";
+                    exibirCompVenc();
+                }
+                if(tabela[3] == 1 && tabela[4] == 1 && tabela[5] == 1) {
+                    document.getElementById("a10").style.backgroundColor = "red";
+                    document.getElementById("a11").style.backgroundColor = "red";
+                    document.getElementById("a12").style.backgroundColor = "red";
+                    exibirCompVenc();
+                }
+                if(tabela[6] == 1 && tabela[7] == 1 && tabela[8] == 1) {
+                    document.getElementById("a20").style.backgroundColor = "red";
+                    document.getElementById("a21").style.backgroundColor = "red";
+                    document.getElementById("a22").style.backgroundColor = "red";
+                    exibirCompVenc();
+                }
+                if(tabela[0] == 1 && tabela[4] == 1 && tabela[8] == 1) {
+                    document.getElementById("a00").style.backgroundColor = "red";
+                    document.getElementById("a11").style.backgroundColor = "red";
+                    document.getElementById("a22").style.backgroundColor = "red";
+                    exibirCompVenc();
+                }
+                if(tabela[2] == 1 && tabela[4] == 1 && tabela[6] == 1) {
+                    document.getElementById("a02").style.backgroundColor = "red";
+                    document.getElementById("a11").style.backgroundColor = "red";
+                    document.getElementById("a20").style.backgroundColor = "red";
+                    exibirCompVenc();
+                }
+                if(tabela[0] == 1 && tabela[3] == 1 && tabela[6] == 1) {
+                    document.getElementById("a00").style.backgroundColor = "red";
+                    document.getElementById("a10").style.backgroundColor = "red";
+                    document.getElementById("a20").style.backgroundColor = "red";
+                    exibirCompVenc();
+                }
+                if(tabela[1] == 1 && tabela[4] == 1 && tabela[7] == 1) {
+                    document.getElementById("a01").style.backgroundColor = "red";
+                    document.getElementById("a11").style.backgroundColor = "red";
+                    document.getElementById("a21").style.backgroundColor = "red";
+                    exibirCompVenc();
+                }
+                if(tabela[2] == 1 && tabela[5] == 1 && tabela[8] == 1) {
+                    document.getElementById("a02").style.backgroundColor = "red";
+                    document.getElementById("a12").style.backgroundColor = "red";
+                    document.getElementById("a22").style.backgroundColor = "red";
+                    exibirCompVenc();
+                }
+            }
+            function exibirCompVenc() {
+                document.getElementById("compVenc").style.display = "block";
+            }
+            function exibirUserVenc() {
+                document.getElementById("userVenc").style.display = "block";
+            }
+        </script>
+    </head>
+    <body>
+        <div id="container">
+            <a href="#">
+                <table>
+                    <tr id="linha1">
+                        <td id="a00" onclick="jogada('a00')"><img id="xa00" src="x.png"><img id="oa00" src="o.png"></td>
+                        <td id="a01" onclick="jogada('a01')"><img id="xa01" src="x.png"><img id="oa01" src="o.png"></td>
+                        <td id="a02" onclick="jogada('a02')"><img id="xa02" src="x.png"><img id="oa02" src="o.png"></td>
+                    </tr>
+                    <tr id="linha2">
+                        <td id="a10" onclick="jogada('a10')"><img id="xa10" src="x.png"><img id="oa10" src="o.png"></td>
+                        <td id="a11" onclick="jogada('a11')"><img id="xa11" src="x.png"><img id="oa11" src="o.png"></td>
+                        <td id="a12" onclick="jogada('a12')"><img id="xa12" src="x.png"><img id="oa12" src="o.png"></td>
+                    </tr>
+                    <tr>
+                        <td id="a20" onclick="jogada('a20')"><img id="xa20" src="x.png"><img id="oa20" src="o.png"></td>
+                        <td id="a21" onclick="jogada('a21')"><img id="xa21" src="x.png"><img id="oa21" src="o.png"></td>
+                        <td id="a22" onclick="jogada('a22')"><img id="xa22" src="x.png"><img id="oa22" src="o.png"></td>
+                    </tr>
+                </table>
+            </a>
+            <h2 id="compVenc">O computador venceu...</h2>
+            <h2 id="userVenc">Você venceu!</h2>
+        </div>
+    </body>
+</html>
