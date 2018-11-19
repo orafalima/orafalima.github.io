@@ -195,6 +195,7 @@
             function verificacaoUser() {
                 // Nesta primeira condição, as 3 casas da primeira linha precisam ter o valor 0 (jogadas do usuário)
                 if(tabela[0][0] == 0 && tabela[0][1] == 0 && tabela[0][2] == 0) {
+                    // Se sim, exibe a mensagem de vitória do usuário e altera a cor de fundo das casas
                     document.getElementById("linha1").style.backgroundColor = ganha;
                     exibirUserVenc();
                     return true;
@@ -367,6 +368,7 @@
             function verificacaoComp() {
                 // Nesta primeira condição, as 3 casas da primeira linha precisam ter o valor 1 (jogadas do computador)
                 if(tabela[0][0] == 1 && tabela[0][1] == 1 && tabela[0][2] == 1) {
+                    // Se sim, exibe a mensagem de vitória do computador e altera a cor de fundo das casas
                     document.getElementById("linha1").style.backgroundColor = perde;
                     exibirCompVenc();
                 }
@@ -419,6 +421,7 @@
             }
             // Exibir mensagem de empate
             function exibirEmpate() {
+                // Altera a cor de fundo de todas as casas
                 document.getElementById("a00").style.backgroundColor = empate;
                 document.getElementById("a01").style.backgroundColor = empate;
                 document.getElementById("a02").style.backgroundColor = empate;
