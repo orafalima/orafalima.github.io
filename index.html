@@ -83,19 +83,26 @@
             let ganha = "#6ced5b";
             let perde = "#ed5b5b";
             let empate = "#ede15b";
-            function jogadaUser(posicao) {
-                if(posicao == '00') {
+            // Função de jogada do usuário (onclick)
+            function jogadaUser(casa) {
+                // Verificar casa escolhida pelo jogador
+                if(casa == '00') {
+                    // Verificar se a casa já possui algum valor, ou seja, se alguma jogada já foi feita nela (usuário = 0, computador = 1)
                     if(tabela[0][0] != 0 && tabela[0][0] != 1) {
+                        // Se não tiver sido feita, atribuir valor 0 (usuário) a casa
                         tabela[0][0] = 0;
+                        // Exibir o X na casa escolhida
                         document.getElementById("img00").style.display = "inline";
                         document.getElementById("img00").src = imgX;
+                        // Verificar se essa jogada faz o usuário ganhar (return: true)
                         verificacaoUser();
+                        // Se retornar false, o computador faz uma jogada
                         if(verificacaoUser() == false) {
                             jogadaComputador();
                         }
                     }
                 }
-                if(posicao == '01') {
+                if(casa == '01') {
                     if(tabela[0][1] != 0 && tabela[0][1] != 1) {
                         tabela[0][1] = 0;
                         document.getElementById("img01").style.display = "inline";
@@ -106,7 +113,7 @@
                         }
                     } 
                 }
-                if(posicao == '02') {
+                if(casa == '02') {
                     if(tabela[0][2] != 0 && tabela[0][2] != 1) {
                         tabela[0][2] = 0;
                         document.getElementById("img02").style.display = "inline";
@@ -117,7 +124,7 @@
                         }
                     } 
                 }
-                if(posicao == '10') {
+                if(casa == '10') {
                     if(tabela[1][0] != 0 && tabela[1][0] != 1) {
                         tabela[1][0] = 0;
                         document.getElementById("img10").style.display = "inline";
@@ -128,7 +135,7 @@
                         }
                     } 
                 }
-                if(posicao == '11') {
+                if(casa == '11') {
                     if(tabela[1][1] != 0 && tabela[1][1] != 1) {
                         tabela[1][1] = 0;
                         document.getElementById("img11").style.display = "inline";
@@ -139,7 +146,7 @@
                         }
                     } 
                 }
-                if(posicao == '12') {
+                if(casa == '12') {
                     if(tabela[1][2] != 0 && tabela[1][2] != 1) {
                         tabela[1][2] = 0;
                         document.getElementById("img12").style.display = "inline";
@@ -150,7 +157,7 @@
                         }
                     } 
                 }
-                if(posicao == '20') {
+                if(casa == '20') {
                     if(tabela[2][0] != 0 && tabela[2][0] != 1) {
                         tabela[2][0] = 0;
                         document.getElementById("img20").style.display = "inline";
@@ -161,7 +168,7 @@
                         }
                     } 
                 }
-                if(posicao == '21') {
+                if(casa == '21') {
                     if(tabela[2][1] != 0 && tabela[2][1] != 1) {
                         tabela[2][1] = 0;
                         document.getElementById("img21").style.display = "inline";
@@ -172,7 +179,7 @@
                         }
                     } 
                 }
-                if(posicao == '22') {
+                if(casa == '22') {
                     if(tabela[2][2] != 0 && tabela[2][2] != 1) {
                         tabela[2][2] = 0;
                         document.getElementById("img22").style.display = "inline";
@@ -184,7 +191,9 @@
                     } 
                 }
             }
+            // Função que verifica se a jogada do usuário o faz ganhar
             function verificacaoUser() {
+                // Nesta primeira condição, as 3 casas da primeira linha precisam ter o valor 0 (jogadas do usuário)
                 if(tabela[0][0] == 0 && tabela[0][1] == 0 && tabela[0][2] == 0) {
                     document.getElementById("linha1").style.backgroundColor = ganha;
                     exibirUserVenc();
@@ -235,23 +244,32 @@
                     exibirUserVenc();
                     return true;
                 }
+                // Condição de empate, em que todas as casas estão preenchidas, seja com 0 ou 1
                 else if((tabela[0][0] == 0 || tabela[0][0] == 1) && (tabela[0][1] == 0 || tabela[0][1] == 1) && (tabela[0][2] == 0 || tabela[0][2] == 1) && (tabela[1][0] == 0 || tabela[1][0] == 1) && (tabela[1][1] == 0 || tabela[1][1] == 1) && (tabela[1][2] == 0 || tabela[1][2] == 1) && (tabela[2][0] == 0 || tabela[2][0] == 1) && (tabela[2][1] == 0 || tabela[2][1] == 1) && (tabela[2][2] == 0 || tabela[2][2] == 1)) {
                     exibirEmpate();
                     return true;
                 }
+                // Nenhuma condição foi satisfeita e o jogador não ganhou, ou seja, retorna false e continua o jogo
                 else {
                     return false;
                 }
             }            
             function jogadaComputador() {
+                // Cálculo da jogada do computador
                 let jogadaComp = Math.floor(Math.random() * 3).toString() + Math.floor(Math.random() * 3).toString();
+                // Verificar a jogada do computador
                 if(jogadaComp == '00') {
+                    // Verificar se a casa escolhida já não possui algum valor
                     if(tabela[0][0] != 0 && tabela[0][0] != 1) {
+                        // Se não possuir, atribuir valor de 1 (computador) pra casa
                         tabela[0][0] = 1;
+                        // Exibir o O na casa escolhida
                         document.getElementById("img00").style.display = "inline";
                         document.getElementById("img00").src = imgO;
+                        // Verificar se essa jogada faz o computador ganhar
                         verificacaoComp();
                     }
+                    // Se a casa escolhida pelo computador já tiver um valor, a função roda de novo, até achar uma casa sem valor
                     else {
                         jogadaComputador();
                     }
@@ -345,7 +363,9 @@
                     }
                 }
             }
+            // Função que verifica se a jogada do computador o fez ganhar
             function verificacaoComp() {
+                // Nesta primeira condição, as 3 casas da primeira linha precisam ter o valor 1 (jogadas do computador)
                 if(tabela[0][0] == 1 && tabela[0][1] == 1 && tabela[0][2] == 1) {
                     document.getElementById("linha1").style.backgroundColor = perde;
                     exibirCompVenc();
@@ -389,12 +409,15 @@
                     exibirCompVenc();
                 }
             }
+            // Exibir mensagem de vitória do computador
             function exibirCompVenc() {
                 document.getElementById("compVenc").style.display = "block";
             }
+            // Exibir mensagem de vitória do usuário
             function exibirUserVenc() {
                 document.getElementById("userVenc").style.display = "block";
             }
+            // Exibir mensagem de empate
             function exibirEmpate() {
                 document.getElementById("a00").style.backgroundColor = empate;
                 document.getElementById("a01").style.backgroundColor = empate;
@@ -407,6 +430,7 @@
                 document.getElementById("a22").style.backgroundColor = empate;
                 document.getElementById("empate").style.display = "block";
             }
+            // Botão para recarregar a página e jogar novamente
             function jogarNovamente() {
                 location.reload();
             }
