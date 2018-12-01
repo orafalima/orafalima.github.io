@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arara - Início</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="normalize.css">
+    <link rel="shortcut icon" href="images/favicon.png">
+    <script src="script.js"></script>
+</head>
+<body onload="showSlides()">
+    <!--
+Se quiser verificar os breakpoints, utilizar essa div:
+<div id="barraResponsividade"></div>
+-->
+    <header>
+        <div id="headerContainer">
+            <div id="logo">
+                <a href="index.html"><img src="images/Logo.png" alt="Logo do Site"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li class="selected"><a href="index.html">INÍCIO</a></li>
+                    <li><a href="curiosidades.html">CURIOSIDADES</a></li>
+                    <li><a href="cultura.html">CULTURA</a></li>
+                    <li><a href="quiz.html">QUIZ</a></li>
+                    <li><a href="pesquisa.html">PESQUISA</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div id="banner">
+        <img src="images/bannerInicioMob.jpg" alt="Banner do site" style="width:100%">
+    </div>
+    <div class="slideshow-container">
+        <div class="mySlides fade" style="display: block">
+            <img src="images/bannerInicio.jpg" style="width:100%" alt="Slideshow">
+        </div>
+        <div class="mySlides fade">
+            <img src="images/bannerCuriosidades.png" style="width:100%" alt="Slideshow">
+        </div>
+        <div class="mySlides fade">
+            <img src="images/bannerCultura.jpg" style="width:100%" alt="Slideshow">
+        </div>
+        <div class="mySlides fade">
+            <img src="images/bannerQuiz.jpg" style="width:100%" alt="Slideshow">
+        </div>
+        <div class="mySlides fade">
+            <img src="images/bannerPesquisa.png" style="width:100%" alt="Slideshow">
+        </div>
+    </div>
+    <main>
+        <h1 class="index">Início</h1>
+        <section>
+            <h2 class="index">Site sobre araras</h2>
+            <div class="barra"></div>
+            <p>Meu nome é Rafael Lima, tenho 22 anos e sou estudante de Sistemas de Informação na Universidade Federal do Estado do Rio de Janeiro (UNIRIO). Sempre fui apaixonado por Design, mas nunca consegui me achar bom o suficiente, e isso sempre me impediu de progredir. Cheguei a cursar alguns períodos de Design, mas eu estava desanimado com a faculdade, então acabei desistindo. Ao conseguir entrar na UNIRIO-BSI, imaginei que eu pudesse encontrar alguma disciplina que me permitisse fazer o que tanto gosto, e de fato, encontrei isso em Desenvolvimento de Páginas Web.</p>
+            <div id="araras"><img src="images/araras.png" alt="" style="width:100%"></div>
+            <p>Quando me foi dito que deveria escolher um animal para criar este site, o primeiro animal que me veio em mente foi o leão. Sempre fui fascinado por leões, por conta da imponência e força presentes neles, então achei que seria uma boa ideia. Comecei a montar o site.</p>
+            <div class="imagemResponsiva"><img src="images/leaoSite.jpg" alt="Site Leão"></div>
+            <p>Não estava satisfeito. Sentia que não tinha opções suficientes de cores para usar. Queria algo mais colorido e alegre. Pensei em mudar de animal, mas sabia que me daria muito trabalho. E aí eu li a triste notícia de que as ararinhas-azuis haviam sido extintas... "Eu posso fazer o site como uma homenagem a elas." Isso me soou como uma boa desculpa. Então comecei a pensar no quão divertido seria fazer um site sobre araras.</p>
+            <p>Minha primeira ideia foi um menu que mudasse de cor, representando as diferentes espécies de araras. Depois um banner, com várias imagens passando, cada uma te levando pra um lugar diferente do site. Não implementei essas ideias, pois preciso de um maior conhecimento em JavaScript. Ainda estou aprendendo (assim como HTML e CSS). Mas por ora, estou me permitindo fazer o que sei, e espero poder aprimorar o site até a entrega final.</p>
+        </section>
+        <section>
+            <h2 class="index">Objetivos</h2>
+            <p class="destaqueParagrafo1">• Aprofundar meu conhecimento sobre HTML, CSS e JavaScript.</p>
+            <p class="destaqueParagrafo2">• Aprender mais sobre o animal escolhido (as araras).</p>
+            <p class="destaqueParagrafo3">• Aproveitar a grande diversidade de espécies de araras para criar um design diferenciado.</p>
+            <p class="destaqueParagrafo4">• Homenagear as ararinhas-azuis, espécies exclusivas do Brasil, que foram oficialmente extintas em setembro de 2018.</p>
+        </section>
+        <section>
+            <h2 class="index">Motivação</h2>
+            <p>Minha maior motivação foi a quantidade de possibilidades de mistura de cores que eu poderia aderir ao design desse site. Como um amante de design, poder ter a liberdade de usar uma paleta de cores tão diversa é bastante empolgante.</p>
+            <div class="imagemResponsiva"><img src="images/paletaDeCores.png" alt="Paleta de Cores"></div>
+            <p>Ainda tenho muitas ideias, e pretendo colocá-las em prática assim que possível. Atualmente o site contém 5 páginas, cada uma com um tópico diferente, relacionados a araras. Fiz o uso de listas, formulários e tabelas.</p>
+        </section>
+    </main>
+    <footer>
+        <div id="footerContainer">
+            <div id="linksRevistas">
+                <a href="https://www.mundodosanimais.pt/revista/" target="_blank"><img src="images/NationalGeographicLogo.png" title="Revista da National Geographic" alt="Revista da National Geographic"></a><br>
+                <a href="http://assinenatgeo.com.br/?Site_txt=google&Origem_txt=cpc&Formato_txt=bone&Banner_txt=busca&gclid=EAIaIQobChMI5dj656C_3QIVTAmRCh1VswK_EAAYASAAEgL0EvD_BwE" target="_blank"> <img src="images/MundoDosAnimaisLogo.jpg" title="Revista do Mundo dos Animais" alt="Revista do Mundo dos Animais"></a>
+            </div>
+            <div id="imagemFooter">
+                <img src="images/araraFooter.png" alt="Imagem do Rodapé">
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
