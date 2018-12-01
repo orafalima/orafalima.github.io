@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arara - Quiz</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="normalize.css">
+    <link rel="shortcut icon" href="images/favicon.png">
+    <script src="script.js"></script>
+</head>
+<body onload="showSlides()">
+    <!--
+Se quiser verificar os breakpoints, utilizar essa div:
+<div id="barraResponsividade"></div>
+-->
+    <header>
+        <div id="headerContainer">
+            <div id="logo">
+                <a href="index.html"><img src="images/Logo.png" alt="Logo do Site"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">INÍCIO</a></li>
+                    <li><a href="curiosidades.html">CURIOSIDADES</a></li>
+                    <li><a href="cultura.html">CULTURA</a></li>
+                    <li class="selected"><a href="quiz.html">QUIZ</a></li>
+                    <li><a href="pesquisa.html">PESQUISA</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div id="banner"><img src="images/bannerQuizMob.jpg" alt="Banner do site" style="width:100%"></div>
+    <div class="slideshow-container">
+        <div class="mySlides fade" style="display: block">
+            <img src="images/bannerQuiz.jpg" style="width:100%" alt="Slideshow">
+        </div>
+        <div class="mySlides fade">
+            <img src="images/bannerPesquisa.png" style="width:100%" alt="Slideshow">
+        </div>
+        <div class="mySlides fade">
+            <img src="images/bannerInicio.jpg" style="width:100%" alt="Slideshow">
+        </div>
+        <div class="mySlides fade">
+            <img src="images/bannerCuriosidades.png" style="width:100%" alt="Slideshow">
+        </div>
+        <div class="mySlides fade">
+            <img src="images/bannerCultura.jpg" style="width:100%" alt="Slideshow">
+        </div>
+    </div>
+    <main>
+        <!-- Eu não consegui encontrar nenhum quiz interessante sobre araras, então utilizei esse quiz sobre aves em geral. -->
+        <h1>Quiz</h1>
+        <h2>Teste seu conhecimento sobre aves</h2>
+        <div class="barra"></div>
+        <form>
+            <p id="questao1">1) Existem cerca de quantas espécies de aves em todo o mundo?</p>
+            <input type="radio" name="questao1" id="r1"><label for="r1"><span id="q1"> 2.000</span></label><br>
+            <input type="radio" name="questao1" id="r2"><label for="r2"><span id="q2"> 5.500</span></label><br>
+            <input type="radio" name="questao1" id="r3"><label for="r3"><span id="q3"> 7.000</span></label><br>
+            <input type="radio" name="questao1" id="r4"><label for="r4"><span id="q4"> 8.500</span></label><br>
+            <input type="radio" name="questao1" id="r5"><label for="r5"><span id="q5"> 10.000</span></label><br><br>
+            <p id="questao2">2) Todas as aves voam e têm penas?</p>
+            <input type="radio" name="questao2" id="r6"><label for="r6"><span id="q6"> Sim, todas.</span></label><br>
+            <input type="radio" name="questao2" id="r7"><label for="r7"><span id="q7"> Todas as aves voam, mas nem todas as aves têm penas.</span></label><br>
+            <input type="radio" name="questao2" id="r8"><label for="r8"><span id="q8"> Todas as aves têm penas, mas nem todas as aves voam.</span></label><br>
+            <input type="radio" name="questao2" id="r9"><label for="r9"><span id="q9"> Algumas aves não têm penas e nem voam.</span></label><br><br>
+            <p id="questao3">3) Os ovos de todas as aves podem ser comidos por seres humanos. Essa afirmação é verdadeira ou falsa?</p>
+            <input type="radio" name="questao3" id="r10"><label for="r10"><span id="q10"> Verdadeira</span></label><br>
+            <input type="radio" name="questao3" id="r11"><label for="r11"><span id="q11"> Falsa</span></label><br><br>
+            <p id="questao4">4) Qual animal é considerado a maior espécies viva de aves?</p>
+            <input type="radio" name="questao4" id="r12"><label for="r12"><span id="q12"> Arara</span></label><br>
+            <input type="radio" name="questao4" id="r13"><label for="r13"><span id="q13"> Avestruz</span></label><br>
+            <input type="radio" name="questao4" id="r14"><label for="r14"><span id="q14"> Gavião</span></label><br>
+            <input type="radio" name="questao4" id="r15"><label for="r15"><span id="q15"> Condor dos Andes</span></label><br>
+            <input type="radio" name="questao4" id="r16"><label for="r16"><span id="q16"> Ema</span></label><br><br>
+            <p id="questao5">5) "Pitangus sulphuratus" é o nome científico de qual ave?</p>
+            <input type="radio" name="questao5" id="r17"><label for="r17"><span id="q17"> Papagaio</span></label><br>
+            <input type="radio" name="questao5" id="r18"><label for="r18"><span id="q18"> Pinguim</span></label><br>
+            <input type="radio" name="questao5" id="r19"><label for="r19"><span id="q19"> Sabiá</span></label><br>
+            <input type="radio" name="questao5" id="r20"><label for="r20"><span id="q20"> Beija-flor</span></label><br>
+            <input type="radio" name="questao5" id="r21"><label for="r21"><span id="q21"> Bem-te-vi</span></label><br><br>
+            <p id="questao6">6) Qual destas corujas tem atividades diurnas?</p>
+            <input type="radio" name="questao6" id="r22"><label for="r22"><span id="q22"> Coruja-orelhuda</span></label><br>
+            <input type="radio" name="questao6" id="r23"><label for="r23"><span id="q23"> Coruja-de-igreja</span></label><br>
+            <input type="radio" name="questao6" id="r24"><label for="r24"><span id="q24"> Coruja-buraqueira</span></label><br>
+            <input type="radio" name="questao6" id="r25"><label for="r25"><span id="q25"> Coruja-anã</span></label><br>
+            <input type="radio" name="questao6" id="r26"><label for="r26"><span id="q26"> Coruja das Torres do Oeste</span></label><br><br>
+            <p id="questao7">7) O que pinguins e araras têm em comum?</p>
+            <input type="radio" name="questao7" id="r27"><label for="r27"><span id="q27"> Ambos fazem ninhos</span></label><br>
+            <input type="radio" name="questao7" id="r28"><label for="r28"><span id="q28"> As longas penas que permitem o voo</span></label><br>
+            <input type="radio" name="questao7" id="r29"><label for="r29"><span id="q29"> Os dois não põem ovos</span></label><br>
+            <input type="radio" name="questao7" id="r30"><label for="r30"><span id="q30"> Pinguins e araras acasalam com o mesmo parceiro durante toda a vida</span></label><br>
+            <input type="radio" name="questao7" id="r31"><label for="r31"><span id="q31"> Os dois não têm semelhanças</span></label><br><br>
+            <p id="questao8">8) O que são as chamadas aves parasitas?</p>
+            <input type="radio" name="questao8" id="r32"><label for="r32"><span id="q32"> As aves-marinhas que furtam os peixes das outras aves</span></label><br>
+            <input type="radio" name="questao8" id="r33"><label for="r33"><span id="q33"> As que depositam seus ovos no ninho de outras aves</span></label><br>
+            <input type="radio" name="questao8" id="r34"><label for="r34"><span id="q34"> As que não sabem voar e voam de carona com as outras</span></label><br>
+            <input type="radio" name="questao8" id="r35"><label for="r35"><span id="q35"> As aves que roubam comida de outras aves</span></label><br>
+            <input type="radio" name="questao8" id="r36"><label for="r36"><span id="q36"> Nenhuma das alternativas anteriores</span></label><br><br>
+            <p id="questao9">9) Qual é o nome do pássaro da mitologia grega que, quando morria, entrava em auto-combustão e, passado algum tempo, renascia das próprias cinzas?</p>
+            <input type="text" name="questao9" id="r37" onfocus="dentroCampo()" onblur="foraCampo()"><span id="respostaQ10">(Fênix)</span><br><br>
+            <p id="questao10">10) Como é chamado o estudo das aves?</p>
+            <input type="radio" name="questao10" id="r38"><label for="r38"><span id="q38"> Mastozoologia</span></label><br>
+            <input type="radio" name="questao10" id="r39"><label for="r39"><span id="q39"> Herpetologia</span></label><br>
+            <input type="radio" name="questao10" id="r40"><label for="r40"><span id="q40"> Ictiologia</span></label><br>
+            <input type="radio" name="questao10" id="r41"><label for="r41"><span id="q41"> Ornitologia</span></label><br>
+            <input type="radio" name="questao10" id="r42"><label for="r42"><span id="q42"> Entomologia</span></label>
+        </form>
+        <button id="botaoEnviar" onclick="enviarRespostas()">Enviar</button>
+        <p id="resultado"></p>
+        <button id="botaoRefazer" onclick="refazerQuiz()">Refazer</button> <button id="botaoVerificarRespostas" onclick="verificarRespostas()">Verificar respostas</button>
+    </main>
+    <footer>
+        <div id="footerContainer">
+            <div id="linksRevistas">
+                <a href="https://www.mundodosanimais.pt/revista/" target="_blank"><img src="images/NationalGeographicLogo.png" title="Revista da National Geographic" alt="Revista da National Geographic"></a><br>
+                <a href="http://assinenatgeo.com.br/?Site_txt=google&Origem_txt=cpc&Formato_txt=bone&Banner_txt=busca&gclid=EAIaIQobChMI5dj656C_3QIVTAmRCh1VswK_EAAYASAAEgL0EvD_BwE" target="_blank"> <img src="images/MundoDosAnimaisLogo.jpg" title="Revista do Mundo dos Animais" alt="Revista do Mundo dos Animais"></a>
+            </div>
+            <div id="imagemFooter">
+                <img src="images/araraFooter.png" alt="Imagem do Rodapé">
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

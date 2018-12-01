@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arara - Cultura</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="normalize.css">
+    <link rel="shortcut icon" href="images/favicon.png">
+    <script src="script.js"></script>
+</head>
+<body onload="showSlides()">
+    <!--
+Se quiser verificar os breakpoints, utilizar essa div:
+<div id="barraResponsividade"></div>
+-->
+    <header>
+        <div id="headerContainer">
+            <div id="logo">
+                <a href="index.html"><img src="images/Logo.png" alt="Logo do Site"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">INÍCIO</a></li>
+                    <li><a href="curiosidades.html">CURIOSIDADES</a></li>
+                    <li class="selected"><a href="cultura.html">CULTURA</a></li>
+                    <li><a href="quiz.html">QUIZ</a></li>
+                    <li><a href="pesquisa.html">PESQUISA</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div id="banner">
+        <img src="images/bannerCulturaMob.jpg" alt="Banner do site" style="width:100%">
+    </div>
+    <div class="slideshow-container">
+        <div class="mySlides fade" style="display: block">
+            <img src="images/bannerCultura.jpg" style="width:100%" alt="Slideshow">
+        </div>
+        <div class="mySlides fade">
+            <img src="images/bannerQuiz.jpg" style="width:100%" alt="Slideshow">
+        </div>
+        <div class="mySlides fade">
+            <img src="images/bannerPesquisa.png" style="width:100%" alt="Slideshow">
+        </div>
+        <div class="mySlides fade">
+            <img src="images/bannerInicio.jpg" style="width:100%" alt="Slideshow">
+        </div>
+        <div class="mySlides fade">
+            <img src="images/bannerCuriosidades.png" style="width:100%" alt="Slideshow">
+        </div>
+    </div>
+    <main id="cultura">
+        <h1>Página Cultura</h1>
+        <h2>Cultura</h2>
+        <div class="barra"></div>
+        <aside>
+            <h3>Índice</h3>
+            <ol>
+                <li><a href="#filmes">Filmes</a>
+                    <ul>
+                        <li><a href="#rio">Rio</a></li>
+                        <li><a href="#rio2">Rio 2</a></li>
+                    </ul>
+                </li>
+                <li><a href="#jogos">Jogos</a>
+                    <ul>
+                        <li><a href="#angryBirdsRio">Angry Birds Rio</a></li>
+                    </ul>
+                </li>
+                <li><a href="#livros">Livros</a>
+                    <ul>
+                        <li><a href="#aAraraCantora">A Arara Cantora</a></li>
+                        <li><a href="#aAraraEOGuarana">A Arara e o Guaraná</a></li>
+                    </ul>
+                </li>
+                <li><a href="#musicas">Músicas</a>
+                    <ul>
+                        <li><a href="#araraAzul">Arara Azul - Ernani Fornari</a></li>
+                    </ul>
+                </li>
+            </ol>
+        </aside>
+        <section>
+            <h2 id="filmes">1. Filmes</h2>
+            <article>
+                <h3 id="rio">Rio</h3>
+                <div class="imagemAside"><img src="images/filmeRio.jpg" title="Rio" alt="Rio"></div>
+                <p>Capturada por contrabandistas de animais quando tinha acabado de nascer, a arara de nome Blu nunca aprendeu a voar e vive uma vida domesticada feliz em Minnesota, nos Estados Unidos, com sua dona, Linda. Blu pensa que é a última arara de sua espécie, porém quando descobrem que Jewel, uma fêmea, vive no Rio de Janeiro, Blu e Linda vão ao seu encontro. Os contrabandistas capturam Blu e Jewel, mas as aves escapam e começam uma aventura arriscada rumo à liberdade. <a href="https://pt.wikipedia.org/wiki/Rio_(filme)" target="_blank">Saiba mais sobre o filme...</a></p><br>
+                <div style="text-align: center">
+                    <iframe src="https://www.youtube.com/embed/_QNrbbGpLrc" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>   
+            </article>
+            <div class="barra"></div>
+            <article>
+                <h3 id="rio2">Rio 2</h3>
+                <img src="images/filmeRio2.jpg" title="Rio 2" alt="Rio 2">
+                <p>As araras Blu e Jade vivem felizes com seus filhos no Rio de Janeiro. Quando seus donos, Túlio e Linda, encontram pássaros de sua espécie na Amazônia, eles decidem partir para novas aventuras na Região Norte do país. Só que nem tudo é perfeito. Nigel, o velho inimigo de Blu e Jade, está de volta para se vingar. <a href="https://pt.wikipedia.org/wiki/Rio_2" target="_blank">Saiba mais sobre o filme...</a></p><br>
+                <div style="text-align: center">
+                    <iframe src="https://www.youtube.com/embed/jDAJCc1IkPI" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </article>
+        </section>
+        <div class="barra"></div>
+        <section>
+            <h2 id="jogos">2. Jogos</h2>
+            <article>
+                <h3 id="angryBirdsRio">Angry Birds Rio</h3>
+                <img src="images/jogoAngryBirdsRio.jpg" title="Angry Birds Rio" alt="Angry Birds Rio">
+                <p>Angry Birds é um dos jogos mais populares entre os usuários de iPhone e Android. O aplicativo é conhecido por suas versões comemorativas – Angry Birds Seasons - e agora lança o jogo com um tema que os brasileiros vão gostar: a animação Rio. <a href="https://pt.wikipedia.org/wiki/Angry_Birds_Rio" target="_blank">Saiba mais sobre o jogo...</a></p>
+            </article>
+        </section>
+        <div class="barra"></div>
+        <section>
+            <h2 id="livros">3. Livros</h2>
+            <article>
+                <h3 id="aAraraCantora">A Arara Cantora</h3>
+                <img src="images/livroAAraraCantora.jpg" title="A Arara Cantora" alt="A Arara Cantora">
+                <p>Cantar, cantar e cantar. Essa é a vida da arara. Mas tanta cantoria já está incomodando os outros bichos, seus vizinhos... <a href="https://books.google.com.br/books/about/A_Arara_Cantora.html?id=ycolPwAACAAJ&source=kp_book_description&redir_esc=y" target="_blank">Adquira este livro...</a></p>
+            </article>
+            <div class="barra"></div>
+            <article>
+                <h3 id="aAraraEOGuarana">A Arara e o Guaraná</h3>
+                <img src="images/livroAraraGuarana.jpg" title="A Arara e o Guaraná" alt="A Arara e o Guaraná">
+                <p>Uma arara adora guaraná e não deixa outros bichos comer a fruta. Ela enterra todos os cachos que vê, só que esquece onde os escondeu. Até que, um dia, a arara tem uma grande surpresa. <a href="https://books.google.com.br/books/about/A_arara_e_o_guaran%C3%A1.html?id=dfrWNAEACAAJ&source=kp_book_description&redir_esc=y">Adquira este livro...</a></p>
+            </article>
+        </section>
+        <div class="barra"></div>
+        <section>
+            <h2 id="musicas">4. Músicas</h2>
+            <article>
+                <h3 id="araraAzul">Arara Azul - Ernani Fornari</h3><br>
+                <div style="text-align: center">
+                    <iframe src="https://open.spotify.com/embed/track/3vEDqy8PCw1Hoz11C94LnK" allow="encrypted-media"></iframe>
+                </div>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <div id="footerContainer">
+            <div id="linksRevistas">
+                <a href="https://www.mundodosanimais.pt/revista/" target="_blank"><img src="images/NationalGeographicLogo.png" title="Revista da National Geographic" alt="Revista da National Geographic"></a><br>
+                <a href="http://assinenatgeo.com.br/?Site_txt=google&Origem_txt=cpc&Formato_txt=bone&Banner_txt=busca&gclid=EAIaIQobChMI5dj656C_3QIVTAmRCh1VswK_EAAYASAAEgL0EvD_BwE" target="_blank"> <img src="images/MundoDosAnimaisLogo.jpg" title="Revista do Mundo dos Animais" alt="Revista do Mundo dos Animais"></a>
+            </div>
+            <div id="imagemFooter">
+                <img src="images/araraFooter.png" alt="Imagem do Rodapé">
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
