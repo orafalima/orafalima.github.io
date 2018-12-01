@@ -132,6 +132,10 @@ nav li.selected a {
     color: #59A6DC;
 }
 
+nav li {
+    height: 100%;
+}
+
 #resultado {
     margin: 10px;
     margin-top: 20px;
@@ -145,11 +149,13 @@ nav li.selected a {
     width: 70px;
     margin-top: 20px;
     margin-left: 30px;
+    -webkit-appearance: none;
 }
 
 #botaoVerificarRespostas {
     width: 160px;
     display: none;
+    -webkit-appearance: none;
 }
 
 #botaoRefazer {
@@ -157,6 +163,7 @@ nav li.selected a {
     margin-top: 20px;
     margin-left: 30px;
     display: none;
+    -webkit-appearance: none;
 }
 
 #respostaQ10 {
