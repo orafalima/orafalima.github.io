@@ -58,17 +58,6 @@ p {
     text-indent: 30px;
 }
 
-form p::first-letter {
-    color: #000;
-}
-
-p.destaque {
-    padding: 5px;
-    border: solid 2px #59A6DC;
-    margin: 10px;
-    border-radius: 10px;
-}
-
 p.poema {
     text-indent: 0;
     text-align: center;
@@ -127,6 +116,8 @@ table td {
 
 nav a {
     color: #382F2E;
+    display: block;
+    width: 100%;
 }
 
 nav a:hover {
@@ -219,6 +210,12 @@ nav li.selected a {
 iframe {
     width: 711px;
     height: 400px;
+    border: 0;
+    background-color: transparent;
+}
+
+form p {
+    margin-bottom: 5px;
 }
 
 /*======= Extra small devices (phones, 600px and down) =======*/
@@ -259,10 +256,6 @@ iframe {
 
     article img {
         width: 300px;
-    }
-
-    form p::first-letter {
-        font-size: 16px;
     }
 
     form {
@@ -306,9 +299,12 @@ iframe {
         text-align: center;
     }
 
-    nav ul li {
+    nav li a {
         padding-bottom: 7px;
         padding-top: 7px;
+    }
+
+    nav ul li {
         font-weight: bold;
         color: #382F2E;
         font-size: 18px;
@@ -427,10 +423,6 @@ iframe {
         width: 300px;
     }
 
-    form p::first-letter {
-        font-size: 17px;
-    }
-
     form {
         font-size: 17px;
         margin-left: 10px;
@@ -472,9 +464,12 @@ iframe {
         text-align: center;
     }
 
-    nav ul li {
+    nav li a {
         padding-bottom: 7px;
         padding-top: 7px;
+    }
+
+    nav ul li {
         font-weight: bold;
         color: #382F2E;
         font-size: 18px;
@@ -572,10 +567,6 @@ iframe {
         width: 400px;
     }
 
-    form p::first-letter {
-        font-size: 17px;
-    }
-
     form {
         font-size: 17px;
         margin-left: 30px;
@@ -596,9 +587,12 @@ iframe {
         text-align: center;
     }
 
-    nav ul li {
+    nav li a {
         padding-bottom: 7px;
         padding-top: 7px;
+    }
+
+    nav ul li {
         font-weight: bold;
         color: #382F2E;
         font-size: 18px;
@@ -704,10 +698,6 @@ iframe {
 
     p {
         font-size: 18px
-    }
-
-    form p::first-letter {
-        font-size: 18px;
     }
 
     form {
@@ -938,10 +928,6 @@ iframe {
 
     article {
         margin-bottom: 20px;
-    }
-
-    form p::first-letter {
-        font-size: 20px;
     }
 
     form {
