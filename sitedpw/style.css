@@ -145,6 +145,12 @@ nav li {
     display: none;
 }
 
+input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
 #botaoEnviar {
     width: 70px;
     margin-top: 20px;
