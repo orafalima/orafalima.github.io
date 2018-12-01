@@ -145,29 +145,19 @@ nav li {
     display: none;
 }
 
-input {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-
 button {
     -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
 }
 
 #botaoEnviar {
     width: 70px;
     margin-top: 20px;
     margin-left: 30px;
-    -webkit-appearance: none;
 }
 
 #botaoVerificarRespostas {
     width: 160px;
     display: none;
-    -webkit-appearance: none;
 }
 
 #botaoRefazer {
@@ -175,7 +165,6 @@ button {
     margin-top: 20px;
     margin-left: 30px;
     display: none;
-    -webkit-appearance: none;
 }
 
 #respostaQ10 {
