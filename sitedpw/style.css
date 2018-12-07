@@ -136,7 +136,7 @@ nav li.selected a {
     margin: 10px;
     margin-top: 20px;
     border: solid 1px orange;
-    border-radius: 7px;
+    border-radius: 5px;
     padding: 10px;
     display: none;
 }
@@ -161,11 +161,18 @@ button {
     display: none;
 }
 
-#respostaQ10 {
+#resposta37 {
     color: green;
     font-weight: bold;
     margin-left: 5px;
     display: none;
+}
+
+.questoes {
+    border: 1px solid #999;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
 }
 
 .fade {
@@ -218,6 +225,8 @@ iframe {
 
 form p {
     margin-bottom: 5px;
+    text-indent: 0;
+    font-weight: bold;
 }
 
 /*======= Extra small devices (phones, 600px and down) =======*/
@@ -266,11 +275,6 @@ form p {
         margin-right: 10px;
     }
 
-    form p {
-        text-indent: 0;
-        font-weight: bold;
-    }
-
     #linksRevistas {
         margin-left: 10px;
         margin-top: 10px;
@@ -284,6 +288,10 @@ form p {
     #imagemFooter {
         display: flex;
         justify-content: flex-end;
+    }
+
+    #logoAlcon {
+        width: 200px;
     }
 
     #imagemFooter img {
@@ -431,11 +439,6 @@ form p {
         margin-right: 10px;
     }
 
-    form p {
-        text-indent: 0;
-        font-weight: bold;
-    }
-
     #linksRevistas {
         margin-left: 20px;
         margin-top: 20px;
@@ -460,6 +463,10 @@ form p {
         text-align: center;
         padding-top: 10px;
         padding-bottom: 2px;
+    }
+
+    #logoAlcon {
+        width: 250px;
     }
 
     nav ul {
@@ -574,15 +581,14 @@ form p {
         margin-left: 30px;
     }
 
-    form p {
-        text-indent: 0;
-        font-weight: bold;
-    }
-
     #logo {
         text-align: center;
         padding-top: 10px;
         padding-bottom: 2px;
+    }
+
+    #logoAlcon {
+        width: 250px;
     }
 
     nav ul {
@@ -684,6 +690,10 @@ form p {
         margin-top: 20px;
         margin-bottom: 20px;
     }
+
+    .culturaLivros {
+        width: 300px;
+    }
 }
 
 /*======= Large devices (laptops/desktops, 992px and up) =======*/
@@ -705,11 +715,6 @@ form p {
     form {
         font-size: 18px;
         margin-left: 30px;
-    }
-
-    form p {
-        text-indent: 0;
-        font-weight: bold;
     }
 
     section {
@@ -786,6 +791,10 @@ form p {
         width: 400px;
     }
 
+    #logoAlcon {
+        width: 250px;
+    }
+
     aside {
         background-color: #fff;
         width: 500px;
@@ -838,6 +847,15 @@ form p {
         margin-top: 30px;
         margin-bottom: 30px;
     }
+
+    .culturaLivros {
+        width: 300px;
+    }
+
+    #paleta {
+        padding: 10px;
+        width: 550px;
+    }
 }
 
 /*======= Extra large devices (large laptops and desktops, 1200px and up) =======*/
@@ -879,6 +897,10 @@ form p {
         margin-bottom: 10px;
         margin-top: 10px;
         width: 700px;
+    }
+
+    #logoAlcon {
+        width: 270px;
     }
 
     #headerContainer {
@@ -937,11 +959,6 @@ form p {
         margin-left: 30px;
     }
 
-    form p {
-        text-indent: 0;
-        font-weight: bold;
-    }
-
     aside {
         background-color: #fff;
         width: 500px;
@@ -992,5 +1009,14 @@ form p {
         width: 100%;
         margin-top: 30px;
         margin-bottom: 30px;
+    }
+    
+    .culturaLivros {
+        width: 350px;
+    }
+
+    #paleta {
+        padding: 10px;
+        width: 550px;
     }
 }

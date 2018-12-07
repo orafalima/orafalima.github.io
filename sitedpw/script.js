@@ -24,22 +24,66 @@ function enviarRespostas() {
 }
 
 function adicionarPontos() {
-    //Adicionando pontos caso o usuário tenha acertado alguma das questões
-    if (r4.checked == true) pontuacao += 1;
-    if (r8.checked == true) pontuacao += 1;
-    if (r10.checked == true) pontuacao += 1;
-    if (r13.checked == true) pontuacao += 1;
-    if (r21.checked == true) pontuacao += 1;
-    if (r24.checked == true) pontuacao += 1;
-    if (r30.checked == true) pontuacao += 1;
-    if (r33.checked == true) pontuacao += 1;
-    if (r41.checked == true) pontuacao += 1;
-
-    //Pegando a resposta da questão 9 e verificando se está correta
-    let questao10 = document.getElementById("r37").value;
-    if (questao10 == "Fênix" || questao10 == "fênix" || questao10 == "Fenix" || questao10 == "fenix") {
+    //QUESTÃO 1
+    if (opcao4.checked) {
         pontuacao += 1;
-    }
+        document.getElementById("questao1").style.backgroundColor = "#e0fce4";
+    } else document.getElementById("questao1").style.backgroundColor = "#fce0e0";
+
+    //QUESTÃO 2
+    if (opcao8.checked) {
+        pontuacao += 1;
+        document.getElementById("questao2").style.backgroundColor = "#e0fce4";
+    } else document.getElementById("questao2").style.backgroundColor = "#fce0e0";
+
+    //QUESTÃO 3
+    if (opcao10.checked) {
+        pontuacao += 1;
+        document.getElementById("questao3").style.backgroundColor = "#e0fce4";
+    } else document.getElementById("questao3").style.backgroundColor = "#fce0e0"; 
+
+    //QUESTÃO 4
+    if (opcao13.checked) {
+        pontuacao += 1;
+        document.getElementById("questao4").style.backgroundColor = "#e0fce4";
+    } else document.getElementById("questao4").style.backgroundColor = "#fce0e0"; 
+
+    //QUESTÃO 5
+    if (opcao21.checked) {
+        pontuacao += 1;
+        document.getElementById("questao5").style.backgroundColor = "#e0fce4";
+    } else document.getElementById("questao5").style.backgroundColor = "#fce0e0"; 
+
+    //QUESTÃO 6
+    if (opcao24.checked) {
+        pontuacao += 1;
+        document.getElementById("questao6").style.backgroundColor = "#e0fce4";
+    } else document.getElementById("questao6").style.backgroundColor = "#fce0e0";
+
+    //QUESTÃO 7
+    if (opcao30.checked) {
+        pontuacao += 1;
+        document.getElementById("questao7").style.backgroundColor = "#e0fce4";
+    } else document.getElementById("questao7").style.backgroundColor = "#fce0e0";
+
+    //QUESTÃO 8
+    if (opcao33.checked) {
+        pontuacao += 1;
+        document.getElementById("questao8").style.backgroundColor = "#e0fce4";
+    } else document.getElementById("questao8").style.backgroundColor = "#fce0e0";
+
+    //QUESTÃO 9
+    let respostaQuestao9 = document.getElementById("opcao37").value;
+    if (respostaQuestao9 == "Fênix" || respostaQuestao9 == "fênix" || respostaQuestao9 == "Fenix" || respostaQuestao9 == "fenix") {
+        pontuacao += 1;
+        document.getElementById("questao9").style.backgroundColor = "#e0fce4";
+    } else document.getElementById("questao9").style.backgroundColor = "#fce0e0"; 
+
+    //QUESTÃO 10
+    if (opcao41.checked) {
+        pontuacao += 1;
+        document.getElementById("questao10").style.backgroundColor = "#e0fce4";
+    } else document.getElementById("questao10").style.backgroundColor = "#fce0e0"; 
 }
 
 function verificarPontuacao() {
@@ -60,174 +104,186 @@ function verificarRespostas() {
     document.getElementById("botaoVerificarRespostas").style.display = "none";
 
     //Exibindo todas as opções certas
-    document.getElementById("q4").style.color = "green";
-    document.getElementById("q4").style.fontWeight = "bold";
-    document.getElementById("q4").innerHTML += " ✓";
+    document.getElementById("resposta4").style.color = "green";
+    document.getElementById("resposta4").style.fontWeight = "bold";
+    document.getElementById("resposta4").innerHTML += " ✓";
 
-    document.getElementById("q8").style.color = "green";
-    document.getElementById("q8").style.fontWeight = "bold";
-    document.getElementById("q8").innerHTML += " ✓";
+    document.getElementById("resposta8").style.color = "green";
+    document.getElementById("resposta8").style.fontWeight = "bold";
+    document.getElementById("resposta8").innerHTML += " ✓";
 
-    document.getElementById("q10").style.color = "green";
-    document.getElementById("q10").style.fontWeight = "bold";
-    document.getElementById("q10").innerHTML += " ✓";
+    document.getElementById("resposta10").style.color = "green";
+    document.getElementById("resposta10").style.fontWeight = "bold";
+    document.getElementById("resposta10").innerHTML += " ✓";
 
-    document.getElementById("q13").style.color = "green";
-    document.getElementById("q13").style.fontWeight = "bold";
-    document.getElementById("q13").innerHTML += " ✓";
+    document.getElementById("resposta13").style.color = "green";
+    document.getElementById("resposta13").style.fontWeight = "bold";
+    document.getElementById("resposta13").innerHTML += " ✓";
 
-    document.getElementById("q21").style.color = "green";
-    document.getElementById("q21").style.fontWeight = "bold";
-    document.getElementById("q21").innerHTML += " ✓";
+    document.getElementById("resposta21").style.color = "green";
+    document.getElementById("resposta21").style.fontWeight = "bold";
+    document.getElementById("resposta21").innerHTML += " ✓";
 
-    document.getElementById("q24").style.color = "green";
-    document.getElementById("q24").style.fontWeight = "bold";
-    document.getElementById("q24").innerHTML += " ✓";
+    document.getElementById("resposta24").style.color = "green";
+    document.getElementById("resposta24").style.fontWeight = "bold";
+    document.getElementById("resposta24").innerHTML += " ✓";
 
-    document.getElementById("q30").style.color = "green";
-    document.getElementById("q30").style.fontWeight = "bold";
-    document.getElementById("q30").innerHTML += " ✓";
+    document.getElementById("resposta30").style.color = "green";
+    document.getElementById("resposta30").style.fontWeight = "bold";
+    document.getElementById("resposta30").innerHTML += " ✓";
 
-    document.getElementById("q33").style.color = "green";
-    document.getElementById("q33").style.fontWeight = "bold";
-    document.getElementById("q33").innerHTML += " ✓";
+    document.getElementById("resposta33").style.color = "green";
+    document.getElementById("resposta33").style.fontWeight = "bold";
+    document.getElementById("resposta33").innerHTML += " ✓";
 
-    document.getElementById("q41").style.color = "green";
-    document.getElementById("q41").style.fontWeight = "bold";
-    document.getElementById("q41").innerHTML += " ✓";
+    document.getElementById("resposta41").style.color = "green";
+    document.getElementById("resposta41").style.fontWeight = "bold";
+    document.getElementById("resposta41").innerHTML += " ✓";
 
-    document.getElementById("respostaQ10").style.display = "inline";
+    document.getElementById("resposta37").style.display = "inline";
 
     //Verificando onde o usuário errou, para que seja exibido também
     verificarErros();
 }
 
 function verificarErros() {
-    //Declarando variáveis para determinar qual opção foi a errada em cada questão
-    let erro1 = "",
-        erro2 = "",
-        erro3 = "",
-        erro4 = "",
-        erro5 = "",
-        erro6 = "",
-        erro7 = "",
-        erro8 = "",
-        erro10 = "";
-
-    //Verificando o input da questão 9
+    verificarQuestao1();
+    verificarQuestao2();
+    verificarQuestao3();
+    verificarQuestao4();
+    verificarQuestao5();
+    verificarQuestao6();
+    verificarQuestao7();
+    verificarQuestao8();
     verificarQuestao9();
+    verificarQuestao10();
+}
 
-    //QUESTÃO 1
-    //Se a opção certa não foi escolhida...
-    if (r4.checked == false) {
-        //Se essa opção errada x foi escolhida, atribua o id dela à variável
-        if (r1.checked == true) erro1 = "q1";
-        if (r2.checked == true) erro1 = "q2";
-        if (r3.checked == true) erro1 = "q3";
-        if (r5.checked == true) erro1 = "q5";
-        //Mude o estilo da opção errada escolhida
-        document.getElementById(erro1).style.color = "red";
-        document.getElementById(erro1).style.fontWeight = "bold";
-        document.getElementById(erro1).innerHTML += " ✗";
+function verificarQuestao1() {
+    let erro = "";
+    if (opcao4.checked == false) {
+        if (opcao1.checked) erro = "resposta1";
+        else if (opcao2.checked) erro = "resposta2";
+        else if (opcao3.checked) erro = "resposta3";
+        else if (opcao5.checked) erro = "resposta5";
+        document.getElementById(erro).style.color = "red";
+        document.getElementById(erro).style.fontWeight = "bold";
+        document.getElementById(erro).innerHTML += " ✗";
     }
+}
 
-    //QUESTÃO 2
-    if (r8.checked == false) {
-        if (r6.checked == true) erro2 = "q6";
-        if (r7.checked == true) erro2 = "q7";
-        if (r9.checked == true) erro2 = "q9";
-        document.getElementById(erro2).style.color = "red";
-        document.getElementById(erro2).style.fontWeight = "bold";
-        document.getElementById(erro2).innerHTML += " ✗";
+function verificarQuestao2() {
+    let erro = "";
+    if (opcao8.checked == false) {
+        if (opcao6.checked) erro = "resposta6";
+        else if (opcao7.checked) erro = "resposta7";
+        else if (opcao9.checked) erro = "resposta9";
+        document.getElementById(erro).style.color = "red";
+        document.getElementById(erro).style.fontWeight = "bold";
+        document.getElementById(erro).innerHTML += " ✗";
     }
+}
 
-    //QUESTÃO 3
-    if (r10.checked == false) {
-        if (r11.checked == true) erro3 = "q11";
-        document.getElementById(erro3).style.color = "red";
-        document.getElementById(erro3).style.fontWeight = "bold";
-        document.getElementById(erro3).innerHTML += " ✗";
+function verificarQuestao3() {
+    let erro = "";
+    if (opcao10.checked == false) {
+        if (opcao11.checked) erro = "resposta11";
+        document.getElementById(erro).style.color = "red";
+        document.getElementById(erro).style.fontWeight = "bold";
+        document.getElementById(erro).innerHTML += " ✗";
     }
+}
 
-    //QUESTÃO 4
-    if (r13.checked == false) {
-        if (r12.checked == true) erro4 = "q12";
-        if (r14.checked == true) erro4 = "q14";
-        if (r15.checked == true) erro4 = "q15";
-        if (r16.checked == true) erro4 = "q16";
-        document.getElementById(erro4).style.color = "red";
-        document.getElementById(erro4).style.fontWeight = "bold";
-        document.getElementById(erro4).innerHTML += " ✗";
+function verificarQuestao4() {
+    let erro = "";
+    if (opcao13.checked == false) {
+        if (opcao12.checked) erro = "resposta12";
+        if (opcao14.checked) erro = "resposta14";
+        if (opcao15.checked) erro = "resposta15";
+        if (opcao16.checked) erro = "resposta16";
+        document.getElementById(erro).style.color = "red";
+        document.getElementById(erro).style.fontWeight = "bold";
+        document.getElementById(erro).innerHTML += " ✗";
     }
+}
 
-    //QUESTÃO 5
-    if (r21.checked == false) {
-        if (r17.checked == true) erro5 = "q17";
-        if (r18.checked == true) erro5 = "q18";
-        if (r19.checked == true) erro5 = "q19";
-        if (r20.checked == true) erro5 = "q20";
-        document.getElementById(erro5).style.color = "red";
-        document.getElementById(erro5).style.fontWeight = "bold";
-        document.getElementById(erro5).innerHTML += " ✗";
+function verificarQuestao5() {
+    let erro = "";
+    if (opcao21.checked == false) {
+        if (opcao17.checked) erro = "resposta17";
+        if (opcao18.checked) erro = "resposta18";
+        if (opcao19.checked) erro = "resposta19";
+        if (opcao20.checked) erro = "resposta20";
+        document.getElementById(erro).style.color = "red";
+        document.getElementById(erro).style.fontWeight = "bold";
+        document.getElementById(erro).innerHTML += " ✗";
     }
+}
 
-    //QUESTÃO 6
-    if (r24.checked == false) {
-        if (r22.checked == true) erro6 = "q22";
-        if (r23.checked == true) erro6 = "q23";
-        if (r25.checked == true) erro6 = "q25";
-        if (r26.checked == true) erro6 = "q26";
-        document.getElementById(erro6).style.color = "red";
-        document.getElementById(erro6).style.fontWeight = "bold";
-        document.getElementById(erro6).innerHTML += " ✗";
+function verificarQuestao6() {
+    let erro = "";
+    if (opcao24.checked == false) {
+        if (opcao22.checked) erro = "resposta22";
+        if (opcao23.checked) erro = "resposta23";
+        if (opcao25.checked) erro = "resposta25";
+        if (opcao26.checked) erro = "resposta26";
+        document.getElementById(erro).style.color = "red";
+        document.getElementById(erro).style.fontWeight = "bold";
+        document.getElementById(erro).innerHTML += " ✗";
     }
+}
 
-    //QUESTÃO 7
-    if (r30.checked == false) {
-        if (r27.checked == true) erro7 = "q27";
-        if (r28.checked == true) erro7 = "q28";
-        if (r29.checked == true) erro7 = "q29";
-        if (r31.checked == true) erro7 = "q31";
-        document.getElementById(erro7).style.color = "red";
-        document.getElementById(erro7).style.fontWeight = "bold";
-        document.getElementById(erro7).innerHTML += " ✗";
+function verificarQuestao7() {
+    let erro = "";
+    if (opcao30.checked == false) {
+        if (opcao27.checked) erro = "resposta27";
+        if (opcao28.checked) erro = "resposta28";
+        if (opcao29.checked) erro = "resposta29";
+        if (opcao31.checked) erro = "resposta31";
+        document.getElementById(erro).style.color = "red";
+        document.getElementById(erro).style.fontWeight = "bold";
+        document.getElementById(erro).innerHTML += " ✗";
     }
+}
 
-    //QUESTÃO 8
-    if (r33.checked == false) {
-        if (r32.checked == true) erro8 = "q32";
-        if (r34.checked == true) erro8 = "q34";
-        if (r35.checked == true) erro8 = "q35";
-        if (r36.checked == true) erro8 = "q36";
-        document.getElementById(erro8).style.color = "red";
-        document.getElementById(erro8).style.fontWeight = "bold";
-        document.getElementById(erro8).innerHTML += " ✗";
-    }
-
-    //QUESTÃO 10
-    if (r41.checked == false) {
-        if (r38.checked == true) erro10 = "q38";
-        if (r39.checked == true) erro10 = "q39";
-        if (r40.checked == true) erro10 = "q40";
-        if (r42.checked == true) erro10 = "q42";
-        document.getElementById(erro10).style.color = "red";
-        document.getElementById(erro10).style.fontWeight = "bold";
-        document.getElementById(erro10).innerHTML += " ✗";
+function verificarQuestao8() {
+    let erro = "";
+    if (opcao33.checked == false) {
+        if (opcao32.checked) erro = "resposta32";
+        if (opcao34.checked) erro = "resposta34";
+        if (opcao35.checked) erro = "resposta35";
+        if (opcao36.checked) erro = "resposta36";
+        document.getElementById(erro).style.color = "red";
+        document.getElementById(erro).style.fontWeight = "bold";
+        document.getElementById(erro).innerHTML += " ✗";
     }
 }
 
 function verificarQuestao9() {
     //QUESTÃO 9
     //Pegando a resposta da questão 9
-    let qq10 = document.getElementById("r37").value;
+    let respostaQuestao9 = document.getElementById("opcao37").value;
     //Se ela foi alguma dessas, então está certa, mude o background do input para verde
-    if (qq10 == "Fênix" || qq10 == "fênix" || qq10 == "Fenix" || qq10 == "fenix") {
-        document.getElementById("r37").style.backgroundColor = "green";
-        document.getElementById("r37").style.color = "white";
+    if (respostaQuestao9 == "Fênix" || respostaQuestao9 == "fênix" || respostaQuestao9 == "Fenix" || respostaQuestao9 == "fenix") {
+        document.getElementById("opcao37").style.backgroundColor = "green";
+        document.getElementById("opcao37").style.color = "white";
     } else {
         //Se ela não foi nenhuma daquelas, mude o background do input para vermelho
-        document.getElementById("r37").style.backgroundColor = "red";
-        document.getElementById("r37").style.color = "white";
+        document.getElementById("opcao37").style.backgroundColor = "red";
+        document.getElementById("opcao37").style.color = "white";
+    }
+}
+
+function verificarQuestao10() {
+    let erro = "";
+    if (opcao41.checked == false) {
+        if (opcao38.checked) erro = "resposta38";
+        if (opcao39.checked) erro = "resposta39";
+        if (opcao40.checked) erro = "resposta40";
+        if (opcao42.checked) erro = "resposta42";
+        document.getElementById(erro).style.color = "red";
+        document.getElementById(erro).style.fontWeight = "bold";
+        document.getElementById(erro).innerHTML += " ✗";
     }
 }
 
@@ -236,11 +292,11 @@ function refazerQuiz() {
 }
 
 function dentroCampo() {
-    document.getElementById("r37").style.backgroundColor = "#59A6DC";
-    document.getElementById("r37").style.color = "white";
+    document.getElementById("opcao37").style.backgroundColor = "#59A6DC";
+    document.getElementById("opcao37").style.color = "white";
 }
 
 function foraCampo() {
-    document.getElementById("r37").style.backgroundColor = "white";
-    document.getElementById("r37").style.color = "black";
+    document.getElementById("opcao37").style.backgroundColor = "white";
+    document.getElementById("opcao37").style.color = "black";
 }
