@@ -88,7 +88,13 @@ function adicionarPontos() {
 
 function verificarPontuacao() {
     //Exibindo uma mensagem que vai de acordo com a pontuação feita
-    if (pontuacao < 5) {
+    if (pontuacao == 0) {
+        document.getElementById("resultado").innerHTML = "Você não acertou nenhuma questão... Poxa, ao menos tentou?";
+        document.getElementById("resultado").style.borderColor = "red";
+    } else if (pontuacao == 1) {
+        document.getElementById("resultado").innerHTML = "Você acertou <span style='color:red;'>" + pontuacao + "</span> questão de 10. Precisa estudar mais um pouco...";
+        document.getElementById("resultado").style.borderColor = "red";
+    } else if (pontuacao < 5) {
         document.getElementById("resultado").innerHTML = "Você acertou <span style='color:red;'>" + pontuacao + "</span> questões de 10. Precisa estudar mais um pouco...";
         document.getElementById("resultado").style.borderColor = "red";
     } else if (pontuacao < 7 && pontuacao > 4) {
