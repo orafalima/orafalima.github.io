@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="favicon.png" />
+    <title>Planejamento Semanal</title>
+    <script>
+        function verificarHora() {
+            let date = new Date();
+            let day = date.getDay();
+            let hour = date.getHours();
+            let minutes = date.getMinutes();
+            let linha = "linha";
+            let posicao = 0;
+
+            if (hour >= 23 && hour < 7) {
+                posicao = 34;
+            } else {
+                switch (hour) {
+                    case 7:
+                        if (minutes < 30) {
+                            posicao = 2;
+                        } else {
+                            posicao = 3;
+                        };
+                        break;
+                    case 8:
+                        if (minutes < 30) {
+                            posicao = 4;
+                        } else {
+                            posicao = 5;
+                        };
+                        break;
+                    case 9:
+                        if (minutes < 30) {
+                            posicao = 6;
+                        } else {
+                            posicao = 7;
+                        };
+                        break;
+                    case 10:
+                        if (minutes < 30) {
+                            posicao = 8;
+                        } else {
+                            posicao = 9;
+                        };
+                        break;
+                    case 11:
+                        if (minutes < 30) {
+                            posicao = 10;
+                        } else {
+                            posicao = 11;
+                        };
+                        break;
+                    case 12:
+                        if (minutes < 30) {
+                            posicao = 12;
+                        } else {
+                            posicao = 13;
+                        };
+                        break;
+                    case 13:
+                        if (minutes < 30) {
+                            posicao = 14;
+                        } else {
+                            posicao = 15;
+                        };
+                        break;
+                    case 14:
+                        if (minutes < 30) {
+                            posicao = 16;
+                        } else {
+                            posicao = 17;
+                        };
+                        break;
+                    case 15:
+                        if (minutes < 30) {
+                            posicao = 18;
+                        } else {
+                            posicao = 19;
+                        };
+                        break;
+                    case 16:
+                        if (minutes < 30) {
+                            posicao = 20;
+                        } else {
+                            posicao = 21;
+                        };
+                        break;
+                    case 17:
+                        if (minutes < 30) {
+                            posicao = 22;
+                        } else {
+                            posicao = 23;
+                        };
+                        break;
+                    case 18:
+                        if (minutes < 30) {
+                            posicao = 24;
+                        } else {
+                            posicao = 25;
+                        };
+                        break;
+                    case 19:
+                        if (minutes < 30) {
+                            posicao = 26;
+                        } else {
+                            posicao = 27;
+                        };
+                        break;
+                    case 20:
+                        if (minutes < 30) {
+                            posicao = 28;
+                        } else {
+                            posicao = 29;
+                        };
+                        break;
+                    case 21:
+                        if (minutes < 30) {
+                            posicao = 30;
+                        } else {
+                            posicao = 31;
+                        };
+                        break;
+                    case 22:
+                        if (minutes < 30) {
+                            posicao = 32;
+                        } else {
+                            posicao = 33;
+                        };
+                        break;
+                    default: posicao = 0;
+                        break;
+                }
+            }
+
+            linha += posicao;
+            document.getElementById(linha).style.border = "2px inset  gray";
+            document.getElementById(linha).style.fontWeight = "600";
+
+            definirCoresDeFundo();
+            definirColuna();
+        }
+
+        function definirColuna() {
+            let date = new Date();
+            let day = date.getDay();
+            let dia;
+            let coluna;
+
+            if (day == 0) {
+                dia = document.getElementById("domingo");
+                coluna = document.getElementsByClassName("coluna9");
+            }
+
+            if (day == 1) {
+                dia = document.getElementById("segunda");
+                coluna = document.getElementsByClassName("coluna3");
+            }
+
+            if (day == 2) {
+                dia = document.getElementById("terca");
+                coluna = document.getElementsByClassName("coluna4");
+            }
+
+            if (day == 3) {
+                dia = document.getElementById("quarta");
+                coluna = document.getElementsByClassName("coluna5");
+            }
+
+            if (day == 4) {
+                dia = document.getElementById("quinta");
+                coluna = document.getElementsByClassName("coluna6");
+            }
+
+            if (day == 5) {
+                dia = document.getElementById("sexta");
+                coluna = document.getElementsByClassName("coluna7");
+            }
+
+            if (day == 6) {
+                dia = document.getElementById("sabado");
+                coluna = document.getElementsByClassName("coluna8");
+            }
+
+            dia.style.backgroundColor = "white";
+            dia.style.color = "#404040";
+            coluna[0].style.borderTop = "2px solid gray";
+            coluna[coluna.length - 1].style.borderBottom = "2px solid gray";
+            for (let i = 0; i < coluna.length; i++) {
+                coluna[i].style.borderLeft = "2px inset gray";
+                coluna[i].style.borderRight = "2px inset gray";
+            }
+        }
+
+        function definirCoresDeFundo() {
+            let alimentacao = document.getElementsByClassName("alimentacao");
+            for (let i = 0; i < alimentacao.length; i++) {
+                alimentacao[i].style.backgroundColor = "#d6f5d6";
+            }
+
+            let faculdade = document.getElementsByClassName("faculdade");
+            for (let i = 0; i < faculdade.length; i++) {
+                faculdade[i].style.backgroundColor = "#fff5cc";
+            }
+
+            let transporte = document.getElementsByClassName("transporte");
+            for (let i = 0; i < transporte.length; i++) {
+                transporte[i].style.backgroundColor = "#ccccff";
+            }
+
+            let academia = document.getElementsByClassName("academia");
+            for (let i = 0; i < academia.length; i++) {
+                academia[i].style.backgroundColor = "#ffcccc";
+            }
+
+            let higiene = document.getElementsByClassName("higiene");
+            for (let i = 0; i < higiene.length; i++) {
+                higiene[i].style.backgroundColor = "#ccffff";
+            }
+
+            let sono = document.getElementsByClassName("sono");
+            for (let i = 0; i < sono.length; i++) {
+                sono[i].style.backgroundColor = "#e6ccff";
+            }
+
+            let estudo = document.getElementsByClassName("estudo");
+            for (let i = 0; i < estudo.length; i++) {
+                estudo[i].style.backgroundColor = "#ffccff";
+            }
+
+        }
+    </script>
+    <style>
+        table {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            font-size: 18px;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: center;
+            padding: 5px;
+        }
+
+        th.numeracao {
+            font-weight: 100;
+            font-size: 12px;
+            width: 15px;
+        }
+
+        td.horario {
+            width: 150px;
+            background-color: #f2f2f2;
+        }
+
+        #linha1 {
+            background-color: #404040;
+            color: white;
+        }
+
+        tr {
+            height: 45px;
+        }
+
+        th.diaDaSemana {
+            font-size: 20px;
+        }
+
+        th.horario {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body onload="verificarHora()">
+    <table>
+        <tr id="linha1">
+            <th class="numeracao" class="coluna1">01</th>
+            <th class="horario" class="coluna2">Horário</th>
+            <th class="diaDaSemana" class="coluna3" id="segunda">Segunda</th>
+            <th class="diaDaSemana coluna4" id="terca">Terça</th>
+            <th class="diaDaSemana" class="coluna5" id="quarta">Quarta</th>
+            <th class="diaDaSemana" class="coluna6" id="quinta">Quinta</th>
+            <th class="diaDaSemana" class="coluna7" id="sexta">Sexta</th>
+            <th class="diaDaSemana" class="coluna8" id="sabado">Sábado</th>
+            <th class="diaDaSemana" class="coluna9" id="domingo">Domingo</th>
+        </tr>
+        <tr id="linha2">
+            <th class="numeracao" class="coluna1">02</th>
+            <td class="horario" class="coluna2">07:00 - 07:30</td>
+            <td class="alimentacao" class="coluna3">Café da manhã</td>
+            <td class="alimentacao coluna4">Café da manhã</td>
+            <td class="alimentacao" class="coluna5">Café da manhã</td>
+            <td class="alimentacao">Café da manhã</td>
+            <td class="alimentacao">Café da manhã</td>
+            <td class="alimentacao">Café da manhã</td>
+            <td class="alimentacao">Café da manhã</td>
+        </tr>
+        <tr id="linha3">
+            <th class="numeracao" class="coluna1">03</th>
+            <td class="horario" class="coluna2">07:30 - 08:00</td>
+            <td class="alimentacao" class="coluna3">Café da manhã</td>
+            <td class="alimentacao coluna4">Café da manhã</td>
+            <td class="alimentacao" class="coluna5">Café da manhã</td>
+            <td class="alimentacao">Café da manhã</td>
+            <td class="alimentacao">Café da manhã</td>
+            <td class="alimentacao">Café da manhã</td>
+            <td class="alimentacao">Café da manhã</td>
+        </tr>
+        <tr id="linha4">
+            <th class="numeracao" class="coluna1">04</th>
+            <td class="horario" class="coluna2">08:00 - 08:30</td>
+            <td class="academia" class="coluna3">Musculação</td>
+            <td class="estudo coluna4">Estudo</td>
+            <td class="estudo" class="coluna5">Estudo</td>
+            <td class="estudo">Estudo</td>
+            <td class="estudo">Estudo</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr id="linha5">
+            <th class="numeracao" class="coluna1">05</th>
+            <td class="horario" class="coluna2">08:30 - 09:00</td>
+            <td class="academia" class="coluna3">Musculação</td>
+            <td class="estudo coluna4">Estudo</td>
+            <td class="estudo" class="coluna5">Estudo</td>
+            <td class="estudo">Estudo</td>
+            <td class="estudo">Estudo</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr id="linha6">
+            <th class="numeracao" class="coluna1">06</th>
+            <td class="horario" class="coluna2">09:00 - 09:30</td>
+            <td class="higiene" class="coluna3">Banho</td>
+            <td class="estudo coluna4">Estudo</td>
+            <td class="estudo" class="coluna5">Estudo</td>
+            <td class="estudo">Estudo</td>
+            <td class="estudo">Estudo</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr id="linha7">
+            <th class="numeracao" class="coluna1">07</th>
+            <td class="horario" class="coluna2">09:30 - 10:00</td>
+            <td class="estudo" class="coluna3">Estudo</td>
+            <td class="estudo coluna4">Estudo</td>
+            <td class="estudo" class="coluna5">Estudo</td>
+            <td class="estudo">Estudo</td>
+            <td class="estudo">Estudo</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr id="linha8">
+            <th class="numeracao" class="coluna1">08</th>
+            <td class="horario" class="coluna2">10:00 - 10:30</td>
+            <td class="estudo" class="coluna3">Estudo</td>
+            <td class="estudo coluna4">Estudo</td>
+            <td class="estudo" class="coluna5">Estudo</td>
+            <td class="estudo">Estudo</td>
+            <td class="estudo">Estudo</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr id="linha9">
+            <th class="numeracao" class="coluna1">09</th>
+            <td class="horario" class="coluna2">10:30 - 11:00</td>
+            <td class="estudo" class="coluna3">Estudo</td>
+            <td class="alimentacao coluna4">Lanche</td>
+            <td class="estudo" class="coluna5">Estudo</td>
+            <td class="alimentacao">Lanche</td>
+            <td class="alimentacao">Lanche</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr id="linha10">
+            <th class="numeracao" class="coluna1">10</th>
+            <td class="horario" class="coluna2">11:00 - 11:30</td>
+            <td class="estudo" class="coluna3">Estudo</td>
+            <td class="estudo coluna4">Estudo</td>
+            <td class="higiene" class="coluna5">Banho</td>
+            <td class="estudo">Estudo</td>
+            <td class="estudo">Estudo</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr id="linha11">
+            <th class="numeracao" class="coluna1">11</th>
+            <td class="horario" class="coluna2">11:30 - 12:00</td>
+            <td class="alimentacao" class="coluna3">Almoço</td>
+            <td class="estudo coluna4">Estudo</td>
+            <td class="alimentacao" class="coluna5">Almoço</td>
+            <td class="estudo">Estudo</td>
+            <td class="estudo">Estudo</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr id="linha12">
+            <th class="numeracao" class="coluna1">12</th>
+            <td class="horario" class="coluna2">12:00 - 12:30</td>
+            <td class="alimentacao" class="coluna3">Almoço</td>
+            <td class="academia coluna4">Musculação</td>
+            <td class="alimentacao" class="coluna5">Almoço</td>
+            <td class="academia">Musculação</td>
+            <td class="academia">Musculação</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr id="linha13">
+            <th class="numeracao" class="coluna1">13</th>
+            <td class="horario" class="coluna2">12:30 - 13:00</td>
+            <td class="transporte" class="coluna3">Ida pra faculdade</td>
+            <td class="academia coluna4">Musculação</td>
+            <td class="transporte" class="coluna5">Ida pra faculdade</td>
+            <td class="academia">Musculação</td>
+            <td class="academia">Musculação</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr id="linha14">
+            <th class="numeracao" class="coluna1">14</th>
+            <td class="horario" class="coluna2">13:00 - 13:30</td>
+            <td class="transporte" class="coluna3">Ida pra faculdade</td>
+            <td class="higiene coluna4">Banho</td>
+            <td class="transporte" class="coluna5">Ida pra faculdade</td>
+            <td class="higiene">Banho</td>
+            <td class="higiene">Banho</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr id="linha15">
+            <th class="numeracao" class="coluna1">15</th>
+            <td class="horario" class="coluna2">13:30 - 14:00</td>
+            <td class="transporte" class="coluna3">Ida pra faculdade</td>
+            <td class="alimentacao coluna4">Almoço</td>
+            <td class="transporte" class="coluna5">Ida pra faculdade</td>
+            <td class="alimentacao">Almoço</td>
+            <td class="alimentacao">Almoço</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr id="linha16">
+            <th class="numeracao" class="coluna1">16</th>
+            <td class="horario" class="coluna2">14:00 - 14:30</td>
+            <td class="faculdade" class="coluna3">Banco de Dados I</td>
+            <td class="alimentacao coluna4">Almoço</td>
+            <td class="faculdade" class="coluna5">Banco de Dados I</td>
+            <td class="alimentacao">Almoço</td>
+            <td class="alimentacao">Almoço</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr id="linha17">
+            <th class="numeracao" class="coluna1">17</th>
+            <td class="horario" class="coluna2">14:30 - 15:00</td>
+            <td class="faculdade" class="coluna3">Banco de Dados I</td>
+            <td class="estudo coluna4">Estudo</td>
+            <td class="faculdade" class="coluna5">Banco de Dados I</td>
+            <td class="estudo">Estudo</td>
+            <td class="estudo">Estudo</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr id="linha18">
+            <th class="numeracao" class="coluna1">18</th>
+            <td class="horario" class="coluna2">15:00 - 15:30</td>
+            <td class="faculdade" class="coluna3">Banco de Dados I</td>
+            <td class="estudo coluna4">Estudo</td>
+            <td class="faculdade" class="coluna5">Banco de Dados I</td>
+            <td class="estudo">Estudo</td>
+            <td class="estudo">Estudo</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr id="linha19">
+            <th class="numeracao" class="coluna1">19</th>
+            <td class="horario" class="coluna2">15:30 - 16:00</td>
+            <td class="faculdade" class="coluna3">Banco de Dados I</td>
+            <td class="estudo coluna4">Estudo</td>
+            <td class="faculdade" class="coluna5">Banco de Dados I</td>
+            <td class="estudo">Estudo</td>
+            <td class="estudo">Estudo</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr id="linha20">
+            <th class="numeracao" class="coluna1">20</th>
+            <td class="horario" class="coluna2">16:00 - 16:30</td>
+            <td class="faculdade" class="coluna3">Estruturas Discretas</td>
+            <td class="estudo coluna4">Estudo</td>
+            <td class="faculdade" class="coluna5">Estruturas Discretas</td>
+            <td class="estudo">Estudo</td>
+            <td class="estudo">Estudo</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr id="linha21">
+            <th class="numeracao" class="coluna1">21</th>
+            <td class="horario" class="coluna2">16:30 - 17:00</td>
+            <td class="faculdade" class="coluna3">Estruturas Discretas</td>
+            <td class="transporte coluna4">Ida pra faculdade</td>
+            <td class="faculdade" class="coluna5">Estruturas Discretas</td>
+            <td class="transporte">Ida pra faculdade</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr id="linha22">
+            <th class="numeracao" class="coluna1">22</th>
+            <td class="horario" class="coluna2">17:00 - 17:30</td>
+            <td class="faculdade" class="coluna3">Estruturas Discretas</td>
+            <td class="transporte coluna4">Ida pra faculdade</td>
+            <td class="faculdade" class="coluna5">Estruturas Discretas</td>
+            <td class="transporte">Ida pra faculdade</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr id="linha23">
+            <th class="numeracao" class="coluna1">23</th>
+            <td class="horario" class="coluna2">17:30 - 18:00</td>
+            <td class="faculdade" class="coluna3">Estruturas Discretas</td>
+            <td class="transporte coluna4">Ida pra faculdade</td>
+            <td class="faculdade" class="coluna5">Estruturas Discretas</td>
+            <td class="transporte">Ida pra faculdade</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr id="linha24">
+            <th class="numeracao" class="coluna1">24</th>
+            <td class="horario" class="coluna2">18:00 - 18:30</td>
+            <td class="faculdade" class="coluna3">Cálculo I</td>
+            <td class="faculdade coluna4">Probabilidade</td>
+            <td class="faculdade" class="coluna5">Cálculo I</td>
+            <td class="faculdade">Probabilidade</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr id="linha25">
+            <th class="numeracao" class="coluna1">25</th>
+            <td class="horario" class="coluna2">18:30 - 19:00</td>
+            <td class="faculdade" class="coluna3">Cálculo I</td>
+            <td class="faculdade coluna4">Probabilidade</td>
+            <td class="faculdade" class="coluna5">Cálculo I</td>
+            <td class="faculdade">Probabilidade</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr id="linha26">
+            <th class="numeracao" class="coluna1">26</th>
+            <td class="horario" class="coluna2">19:00 - 19:30</td>
+            <td class="faculdade" class="coluna3">Cálculo I</td>
+            <td class="faculdade coluna4">Probabilidade</td>
+            <td class="faculdade" class="coluna5">Cálculo I</td>
+            <td class="faculdade">Probabilidade</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr id="linha27">
+            <th class="numeracao" class="coluna1">27</th>
+            <td class="horario" class="coluna2">19:30 - 20:00</td>
+            <td class="faculdade" class="coluna3">Cálculo I</td>
+            <td class="faculdade coluna4">Probabilidade</td>
+            <td class="faculdade" class="coluna5">Cálculo I</td>
+            <td class="faculdade">Probabilidade</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr id="linha28">
+            <th class="numeracao" class="coluna1">28</th>
+            <td class="horario" class="coluna2">20:00 - 20:30</td>
+            <td class="alimentacao" class="coluna3">Janta</td>
+            <td class="alimentacao coluna4">Janta</td>
+            <td class="alimentacao" class="coluna5">Janta</td>
+            <td class="alimentacao">Janta</td>
+            <td class="alimentacao">Janta</td>
+            <td class="alimentacao">Janta</td>
+            <td class="alimentacao">Janta</td>
+        </tr>
+        <tr id="linha29">
+            <th class="numeracao" class="coluna1">29</th>
+            <td class="horario" class="coluna2">20:30 - 21:00</td>
+            <td class="transporte" class="coluna3">Volta da faculdade</td>
+            <td class="transporte coluna4">Volta da faculdade</td>
+            <td class="transporte" class="coluna5">Volta da faculdade</td>
+            <td class="transporte">Volta da faculdade</td>
+            <td class=""></td>
+            <td class=""></td>
+            <td class=""></td>
+        </tr>
+        <tr id="linha30">
+            <th class="numeracao" class="coluna1">30</th>
+            <td class="horario" class="coluna2">21:00 - 21:30</td>
+            <td class="transporte" class="coluna3">Volta da faculdade</td>
+            <td class="transporte coluna4">Volta da faculdade</td>
+            <td class="transporte" class="coluna5">Volta da faculdade</td>
+            <td class="transporte">Volta da faculdade</td>
+            <td class=""></td>
+            <td class=""></td>
+            <td class=""></td>
+        </tr>
+        <tr id="linha31">
+            <th class="numeracao" class="coluna1">31</th>
+            <td class="horario" class="coluna2">21:30 - 22:00</td>
+            <td class="academia" class="coluna3">Aeróbico</td>
+            <td class="academia coluna4">Aeróbico</td>
+            <td class="academia" class="coluna5">Aeróbico</td>
+            <td class="academia">Aeróbico</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr id="linha32">
+            <th class="numeracao" class="coluna1">32</th>
+            <td class="horario" class="coluna2">22:00 - 22:30</td>
+            <td class="higiene" class="coluna3">Banho</td>
+            <td class="higiene coluna4">Banho</td>
+            <td class="higiene" class="coluna5">Banho</td>
+            <td class="higiene">Banho</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr id="linha33">
+            <th class="numeracao" class="coluna1">33</th>
+            <td class="horario" class="coluna2">22:30 - 23:00</td>
+            <td class="sono" class="coluna3">Preparação pra dormir</td>
+            <td class="sono coluna4">Preparação pra dormir</td>
+            <td class="sono" class="coluna5">Preparação pra dormir</td>
+            <td class="sono">Preparação pra dormir</td>
+            <td class="sono">Preparação pra dormir</td>
+            <td class="sono">Preparação pra dormir</td>
+            <td class="sono">Preparação pra dormir</td>
+        </tr>
+        <tr id="linha34">
+            <th class="numeracao" class="coluna1">34</th>
+            <td class="horario" class="coluna2">23:00 - 07:00</td>
+            <td class="sono" class="coluna3">Sono</td>
+            <td class="sono coluna4">Sono</td>
+            <td class="sono" class="coluna5">Sono</td>
+            <td class="sono">Sono</td>
+            <td class="sono">Sono</td>
+            <td class="sono">Sono</td>
+            <td class="sono">Sono</td>
+        </tr>
+    </table>
+</body>
+
+</html>
