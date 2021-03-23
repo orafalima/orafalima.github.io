@@ -1,0 +1,22 @@
+body {
+    background-color:rgb(36, 36, 36);
+}
+
+#text {
+    font-family: 'Raleway', sans-serif;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 200px;
+}
+
+.domain {
+    color: white;
+    font-size: 40px;
+}
+
+#comingSoon {
+    color: gray;
+    font-size: 25px;
+    margin-top: 10px;
+}
