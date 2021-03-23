@@ -2,25 +2,26 @@ body {
     background-color:rgb(36, 36, 36);
 }
 
-#text {
+#container {
     font-family: 'Raleway', sans-serif;
     justify-content: center;
     align-items: center;
     text-align: center;
     margin-top: 10%;
+    opacity: 0;
 }
 
-.domain {
+.title {
     color: white;
     font-size: 40px;
 }
 
-#comingSoon {
+.stylizedTitle {
+    color: #dc143c;
+}
+
+.subTitle {
     color: gray;
     font-size: 25px;
     margin-top: 10px;
-}
-
-#fade {
-    opacity: 0;
 }
