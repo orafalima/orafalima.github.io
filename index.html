@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="shortcut icon" href="favicon.png"/>
     <script src="https://kit.fontawesome.com/4826572e70.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -12,9 +13,14 @@
     <title>Rafael Lima</title>
 </head>
 <body>
-    <div id="text">
-        <div class="domain">rafalima<span style="color: #dc143c;">.dev</span></div>
-        <div id="comingSoon"><i class="fas fa-cog"></i> Coming soon...</div>
+    <div id="fade">
+        <div id="text">
+            <div class="domain">rafalima<span style="color: #dc143c;">.dev</span></div>
+            <div id="comingSoon"><i class="fas fa-cog"></i> Coming soon...</div>
+        </div>
     </div>
+    <script>
+        $("#fade").delay(1000).animate({"opacity": "1"}, 700);
+    </script>
 </body>
 </html>
