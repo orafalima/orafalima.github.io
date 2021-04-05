@@ -5,48 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favicon.png"/>
+
+    <!-- Google Open Sans -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,700;1,800&family=Raleway:wght@500&display=swap" rel="stylesheet">
+    
+    <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/4826572e70.js" crossorigin="anonymous"></script>
+
+    <!-- Script and style files -->
+    <script src="script.js"></script>
+    <link href="style.css" rel="stylesheet">
+
     <title>Rafael Lima</title>
 </head>
-<style>
-    body {
-    background-color:rgb(36, 36, 36);
-    }
-
-    #container {
-        font-family: 'Raleway', sans-serif;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        margin-top: 10%;
-        opacity: 0;
-    }
-
-    .title {
-        color: white;
-        font-size: 40px;
-    }
-
-    .stylizedTitle {
-        color: #dc143c;
-    }
-
-    .subTitle {
-        color: gray;
-        font-size: 25px;
-        margin-top: 10px;
-    }
-</style>
 <body>
     <div id="container">
         <div class="title">rafalima<span class="stylizedTitle">.dev</span></div>
         <div class="subTitle"><i class="fas fa-cog"></i> Coming soon...</div>
     </div>
     <script>
-        $("#container").delay(1000).animate({"opacity": "1"}, 700);
+        fadeInPage();
     </script>
 </body>
 </html>
