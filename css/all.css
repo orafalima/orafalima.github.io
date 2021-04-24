@@ -634,6 +634,7 @@ transition: all 0.5s ease-in-out;
     
     #main {
 		background-size:114px 46px;
+	    padding: 50px 0 30px;
 	}
 	.menu_trigger{
 		background-image: url(../images/btn_mobile_menu@x2.png);
