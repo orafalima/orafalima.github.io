@@ -1,5 +1,5 @@
 body {
-    background-color:rgb(36, 36, 36);
+    background-color:#e7e7e7;
     margin: 0;
     padding: 0;
     font-family: 'Raleway', sans-serif;
@@ -7,19 +7,9 @@ body {
     padding-bottom: 50px;
 }
 
-/*#container {
-    font-family: 'Raleway', sans-serif;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-top: 10%;
-    opacity: 0;
-}*/
-
-
 header {
-    background-color: #dc143c;
-    height: 50px;
+    background-color: #0e0e0e;
+    height: 70px;
     width: 100%;
     position: fixed;
     z-index:1;
@@ -27,8 +17,8 @@ header {
 
 #name {
     color: white;
-    font-size: 25px;
-    margin-left: 15px;
+    font-size: 24px;
+    margin-left: 20px;
     padding-top: 9px;
     font-weight: 300px;
     position: fixed;
@@ -47,7 +37,6 @@ header {
 }
 
 .element {
-    /*border: 1px yellow dotted;*/
     width: 1100px;
     margin: 0 auto;
     padding-top: 100px;
@@ -67,7 +56,6 @@ header {
 .text {
     color: rgb(200, 200, 200);
     font-size: 20px;
-    /*border: 1px blue dotted*/
     margin-top: 10px;
     text-align: justify;
     text-indent: 2.5em;
@@ -78,7 +66,6 @@ header {
     grid-template-columns: auto auto;
     margin-top: 15px;
     grid-gap: 10px;
-    
 }
 
 .game {
@@ -124,24 +111,24 @@ ul {
     height: 50px;
     margin: 0 auto;
     width: 1100px;
-  }
+}
   
-  li {
+li {
     float: left;
-  }
+}
   
-  li a {
+li a {
     display: block;
     color: white;
     text-align: center;
-    font-size: 19px;
-    padding: 14px 20px;
+    font-size: 18px;
+    padding: 15px 20px;
     text-decoration: none;
-  }
+}
   
-  li a:hover:not(.active) {
+li a:hover:not(.active) {
     background-color: rgb(36, 36, 36);
-  }
+}
   
 
 .active {
