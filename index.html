@@ -7,6 +7,7 @@
         content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="format-detection" content="telephone=no">
+    <link rel="icon" href="favicon.png">
     <title>Rafael Lima</title>
     <link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="css/all.css" />
@@ -22,7 +23,7 @@
                     <ul>
                         <li><a class="active" href="index.html">Home</a></li>
                         <li><a href="myskills.html">My skills</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="projects.html">Projects</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav>
@@ -32,62 +33,38 @@
         </div>
         <div class="wrapper-holder grey">
             <section id="main">
-                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                <!--<h2>Here are my biggest achievements</h2>
-                <div class="box_timeline_holder">
-                    <div class="box_timeline">
-                        <ul>
-                            <li>
-                                <div class="date">
-                                    <span>12/09</span>
-                                </div>
-                                <h3>tempora incidunt</h3>
-                                <p>Dolor sit consectetur adipisicing elit, sed do eiusmod tempor</p>
-                            </li>
-                            <li>
-                                <div class="date">
-                                    <span>02/10</span>
-                                </div>
-                                <h3>nemo enim ipsam</h3>
-                                <p>Laudantium totam rem aperiam eaque ipsa quae</p>
-                            </li>
-                            <li>
-                                <div class="date">
-                                    <span>09/11</span>
-                                </div>
-                                <h3>unde omnis iste</h3>
-                                <p>Eaque ipsa quae illo inventore veritatis et quasi architecto </p>
-                            </li>
-                            <li>
-                                <div class="date">
-                                    <span>06/12</span>
-                                </div>
-                                <h3>porro quisquam</h3>
-                                <p>Dolorem ipsum quia consectetur adipisci velit sed quia non</p>
-                            </li>
-                            <li>
-                                <div class="date">
-                                    <span>11/13</span>
-                                </div>
-                                <h3>dolorem eum</h3>
-                                <p>Nodi tempora incidunt ut labore dolore magnam</p>
-                            </li>
-                        </ul>
-                    </div>
-                
-                </div>-->
+                <h3>Hi! I'm <span style="font-weight: bold;">Rafael Lima</span> and I created this website to share my
+                    projects and my passion about games. I'm
+                    <span id="myAge"></span> years old and live in <span style="font-weight: bold;">Rio de Janeiro,
+                        Brazil</span>. At the moment I'm studying
+                    <span style="font-style: italic;">Information Systems</span> at UNIRIO (Federal University of the
+                    State of Rio de Janeiro), and I've been
+                    studying game development since 2020.
+                </h3>
+                <br>
+                <h3>As far as I can remember, I've been a huge fan of games, from video games to tabletop games. When
+                    the Covid-19 pandemic hit my country, I started to play games even more, as an escape valve. From
+                    that point, I realized how important games are, and how they can change people lives positively. So
+                    I took all the programming
+                    knowledge and skills that I developed in college and brought them to this universe of game making,
+                    and just fell in love with it.
+                    Right now I'm taking a lot of courses, reading books, and grabbing every opportunity that I get to
+                    do what I love.</h3>
+                <br>
+                <h3>Here you can find a section where I share my skills and another section with my recent
+                    projects, mostly done just to study and practice. On top of that, you can also find all my
+                    social media and e-mail,
+                    where you can contact me.</h3>
             </section>
         </div>
         <footer id="footer">
             <div class="footer-content">
                 <ul class="social">
-                    <li class="email"><a href="#">Email</a></li>
-                    <li class="facebook"><a href="#">Facebook</a></li>
-                    <li class="google"><a href="#">Google+</a></li>
-                    <li class="twitter"><a href="#">Twitter</a></li>
-                    <li class="pinterest"><a href="#">Pinterest</a></li>
+                    <li class="github"><a href="http://github.com/orafalima" target="_blank">GitHub</a></li>
+                    <li class="twitter"><a href="http://twitter.com/rafalimadev" target="_blank">Twitter</a></li>
+                    <li class="instagram"><a href="http://instagram.com/rafalima.dev" target="_blank">Instagram</a></li>
+                    <li class="email"><a href="malito: contact@rafalima.dev">Email</a></li>
                 </ul>
-                <p class="copy">Copyright 2021 Rafael Lima. All rights reserved.</p>
             </div>
         </footer>
     </div>
@@ -96,6 +73,22 @@
     <script src="js/cells-by-row.js"></script>
     <script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script>
+        window.onload = function changeAge() {
+            let date = new Date();
+            let year = date.getFullYear();
+
+            if (date.getMonth() < 7) {
+                year--;
+            }
+            else if (date.getMonth() == 7 && date.getDay < 12) {
+                year--
+            }
+
+            document.getElementById("myAge").innerHTML = year - 1996;
+        }
+
+    </script>
 </body>
 
 </html>

@@ -57,6 +57,12 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+h3 {
+    font-size: 20px;
+    line-height: 1.3;
+    text-indent: 3em;
+    text-align: justify;
+}
 
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
@@ -141,7 +147,7 @@ a:hover{text-decoration:underline;}
 #header {
 	max-width: 1170px;
 	margin: 0 auto;
-	padding: 69px 0 50px;
+	padding: 40px 0 0px;
 	position:relative;
 }
 .menu_trigger{
@@ -208,14 +214,14 @@ h2.slogan{
 	font-size: 30px;
 	line-height: 32px;
 	color: #dc143c;
-	padding: 34px 0 50px 0;
+	padding: 0.6em 0 0 0;
 }
 /*main
  */
 #main{
 	max-width: 1170px;
 	margin: 0 auto;
-	padding: 93px 0 76px;
+	padding: 70px 0 0px;
 	position:relative;
 }
 #main h2{
@@ -519,6 +525,7 @@ transition: all 0.5s ease-in-out;
 .box_contact span.email{background: url(../images/icon_email2.png) no-repeat;}
 .box_contact span.phone{background: url(../images/icon_phone.png) no-repeat;}
 .box_contact span.skype{background: url(../images/icon_skype.png) no-repeat;}
+.box_contact span.github{background: url(../images/github_icon2.png) no-repeat;}
 /*footer
  */
 #footer {
@@ -530,13 +537,13 @@ transition: all 0.5s ease-in-out;
 .footer-content {
 	max-width: 1170px;
 	margin: 0 auto;
-	padding: 45px 0 20px;
+	padding: 1em 0 0px;
 	color: #a5a5a5;
 }
 .footer-content .social{
 	overflow:hidden;
-	margin: 0 auto 45px;
-	width: 670px;
+	margin: 0 auto 1em;
+	width: 390px;
 }
 .footer-content .social li{
 	float:left;
@@ -545,14 +552,14 @@ transition: all 0.5s ease-in-out;
 	behavior: url(css/PIE.htc);
 	text-indent: -9999px;
 	background: #c6cfc9;
-	width: 123px;
-	height: 123px;
+	width: 90px;
+	height: 90px;
 	position:relative;
 	display: table;
 }
 .footer-content .social li:first-child{margin: 0;}
 .footer-content .social li:hover{
-	background: #628ddd;
+	background: #dc143c;
 	-webkit-transition: all 0.5s ease-in-out;
 -moz-transition: all 0.5s ease-in-out;
 -o-transition: all 0.5s ease-in-out;
@@ -564,9 +571,11 @@ transition: all 0.5s ease-in-out;
 }
 .footer-content .social li.email a{background: url(../images/icon_email.png) no-repeat 50% 50% ;}
 .footer-content .social li.facebook a{background: url(../images/icon_fb.png) no-repeat 50% 50%;}
+.footer-content .social li.github a{background: url(../images/github_icon.png) no-repeat 50% 50%;}
 .footer-content .social li.google a{background: url(../images/icon_gl.png) no-repeat 50% 50% ;}
 .footer-content .social li.twitter a{background: url(../images/icon_tw.png) no-repeat 50% 50% ;}
 .footer-content .social li.pinterest a{background: url(../images/icon_pn.png) no-repeat 50% 50%;}
+.footer-content .social li.instagram a{background: url(../images/instagram_icon.png) no-repeat 50% 50%;}
 .footer-content p{
 	font:18px/20px Arial, Helvetica, sans-serif;
 	display: block;
@@ -621,7 +630,9 @@ transition: all 0.5s ease-in-out;
 /* end add	 */
 
 @media (-webkit-min-device-pixel-ratio:2) ,(min--moz-device-pixel-ratio:2),(-o-min-device-pixel-ratio:2/1),(min-device-pixel-ratio:2),(min-resolution:192dpi),(min-resolution:2dppx){
-	#main {
+	
+    
+    #main {
 		background-size:114px 46px;
 	}
 	.menu_trigger{
@@ -651,6 +662,10 @@ transition: all 0.5s ease-in-out;
 		background-image: url(../images/icon_fb@x2.png);
 		background-size:20px 38px;
 	}
+    .footer-content .social li.github a{
+		background-image: url(../images/github_icon.png);
+		background-size:58px 57px;
+	}
 	.footer-content .social li.google a{
 		background-image: url(../images/icon_gl@x2.png);
 		background-size:42px 38px;
@@ -662,6 +677,10 @@ transition: all 0.5s ease-in-out;
 	.footer-content .social li.pinterest a{
 		background-image: url(../images/icon_pn@x2.png);
 		background-size:38px 38px;
+	}
+    .footer-content .social li.instagram a{
+		background-image: url(../images/instagram_icon.png);
+		background-size:57px 57px;
 	}
 	.plagin_list li.li_1 a{
 		background-image: url(../images/icon_ps@x2.png);
@@ -707,6 +726,27 @@ transition: all 0.5s ease-in-out;
 		background-image: url(../images/icon_skype@x2.png);
 		background-size:54px 51px;
 	}
+    .box_contact span.instagram{
+		background-image: url(../images/instagram_icon.png);
+		background-size:57px 57px;
+	}
+
+    .box_contact span.github {
+        background-image: url(../images/github_icon2.png);
+        background-size: 54px 54px;
+    }
+    h3 {
+        font-size: 0.8em;
+        line-height: 1.3;
+        text-indent: 3em;
+        text-align: justify;
+        margin-right: 1em;
+        margin-left: 1em;
+    }
+    h2 {
+        padding: 0em!important;
+        font-size: 1em!important;
+    }
 /* begin add	 */
 	.fancybox-close {
 		background-image: url(../images/ico_btn-close@x2.png);
