@@ -147,7 +147,7 @@ a:hover{text-decoration:underline;}
 #header {
 	max-width: 1170px;
 	margin: 0 auto;
-	padding: 40px 0 0px;
+	padding: 40px 0 20px;
 	position:relative;
 }
 .menu_trigger{
@@ -206,6 +206,7 @@ transition: all 0.5s ease-in-out;
 #nav ul a.active{
 	border-bottom: 4px solid #fff;
 }
+
 h2.slogan{
 	display: block;
 	text-align: center;
@@ -221,7 +222,7 @@ h2.slogan{
 #main{
 	max-width: 1170px;
 	margin: 0 auto;
-	padding: 70px 0 0px;
+	padding: 70px 0 70px;
 	position:relative;
 }
 #main h2{
@@ -400,7 +401,7 @@ h2.slogan{
 	font-weight: normal;
 }
 .sub_nav a:hover,.sub_nav a.active{
-	color: #628ddd;
+	color: #dc143c;
 	text-decoration: none;
 	-webkit-transition: all 0.5s ease-in-out;
 -moz-transition: all 0.5s ease-in-out;
@@ -419,7 +420,7 @@ transition: all 0.5s ease-in-out;
 	font-weight: normal;
 }
 .sub_nav li:hover,.sub_nav .active {
-	color: #628ddd;
+	color: #dc143c;
 	text-decoration: none;
 	cursor: pointer;
 	-webkit-transition: all 0.5s ease-in-out;
@@ -459,7 +460,7 @@ transition: all 0.5s ease-in-out;
     position: absolute;
     top: 0;
     width: 100%;
-    background: #aee5ec;
+    background: #dc143c;
 	opacity: 0.9;
 	border-radius: 50%;
 	behavior: url(css/PIE.htc);
@@ -614,10 +615,10 @@ transition: all 0.5s ease-in-out;
 	border-radius: 8px;
 }
 .fancybox-close {
-	width: 46px;
-	height: 46px;
-	top: -23px;
-	right: -20px;
+	width: 30px;
+	height: 30px;
+	top: -10px;
+	right: -10px;
 	background-image: url(../images/ico_btn-close.png);
 }
 .fancybox-opened .fancybox-skin{
